@@ -2,23 +2,36 @@ import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Store } from "../../Store";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-function AuctionItem({
-  id,
-  title,
-  imageUrl,
-  endDate,
-  currentBid,
-  highestBidder,
-  handleDeleteAuction,
-}) {
+function AuctionItem(props) {
+  const {
+    id,
+    title,
+    imageUrl,
+    endDate,
+    currentBid,
+    highestBidder,
+    handleDeleteAuction,
+  } = props;
   const [timeLeft, setTimeLeft] = useState("");
   const [auctionEnded, setAuctionEnded] = useState(false);
 
+  const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
-    state: { userInfo },
-  } = useContext(Store);
+    userInfo,
+    cart: { cartItems },
+  } = state;
+  const addToCartHandler = async (item) => {
+    const existItem = cartItems.find((item) => item._id === id);
 
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    ctxDispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...item, quantity },
+    });
+  };
   useEffect(() => {
     const intervalId = setInterval(() => {
       const duration = (new Date(endDate) - new Date()) / 1000;
@@ -69,7 +82,10 @@ function AuctionItem({
           <>
             {userInfo && highestBidder === userInfo.name ? (
               <Link to={`/auctions/${id}`}>
-                <button className="w-full py-2 px-4 bg-green-500 hover:bg-green-600 text-white duration-200 rounded-md mt-4">
+                <button
+                  onClick={() => addToCartHandler(props)}
+                  className="w-full py-2 px-4 bg-green-500 hover:bg-green-600 text-white duration-200 rounded-md mt-4"
+                >
                   You Win!
                 </button>
               </Link>

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
 import { Helmet } from "react-helmet-async";
-import Loading from "../../Components/Loading/Loading";
+
 import { Link } from "react-router-dom";
 
 function Home() {
-  const [loading, setLoading] = useState(true);
   return (
     <div className="home__component">
       <div className="text-center pb-4 pt-8">
