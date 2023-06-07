@@ -42,14 +42,6 @@ function App() {
         />
 
         <Route
-          path="/products/:url"
-          element={
-            <>
-              <Header />
-            </>
-          }
-        />
-        <Route
           path="/cart"
           element={
             <>
@@ -140,40 +132,6 @@ function App() {
         />
 
         <Route
-          path="/admin/products"
-          element={
-            <>
-              <Header />
-              <AdminRoute></AdminRoute>
-            </>
-          }
-          exact
-        />
-
-        <Route
-          path="/admin/product/:id"
-          element={
-            <>
-              <Header />
-              <AdminRoute></AdminRoute>
-            </>
-          }
-        />
-
-        <Route
-          path="/admin/orders"
-          element={
-            <>
-              <Header />
-              <AdminRoute>
-                <OrderListPage />
-              </AdminRoute>
-            </>
-          }
-          exact
-        />
-
-        <Route
           path="/admin/users"
           element={
             <>
@@ -193,29 +151,6 @@ function App() {
               <AdminRoute>
                 <UserEditPage />
               </AdminRoute>
-            </>
-          }
-        />
-
-        {/* Seller Routes */}
-        <Route
-          path="/seller/products"
-          element={
-            <>
-              <Header />
-              <SellerRoute></SellerRoute>
-            </>
-          }
-        />
-
-        <Route
-          path="/seller/orders"
-          element={
-            <>
-              <Header />
-              <SellerRoute>
-                <OrderListPage />
-              </SellerRoute>
             </>
           }
         />
