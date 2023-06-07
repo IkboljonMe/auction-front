@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useReducer, useState } from "react";
-import AuctionItem from "../../components/AuctionItem/AuctionItem";
-import Loading from "../../components/Loading/Loading";
-import ErrorPage from "../../components/ErrorPage/ErrorPage";
+import AuctionItem from "../../components/itemAution/itemAution";
+import Loading from "../../components/loading/loading";
+import ErrorPage from "../../components/error/errorPage";
 import { Store } from "../../Store";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";

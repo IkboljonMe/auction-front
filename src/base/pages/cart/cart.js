@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { Store } from "../../Store";
-import "./CartPage.css";
+import "./cart.css";
 
 export default function CartPage() {
   const { state, dispatch: ctxDispatch } = useContext(Store);

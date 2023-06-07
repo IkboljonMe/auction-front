@@ -4,8 +4,8 @@ import axios from "axios";
 import { Store } from "../../Store";
 import { getError } from "../../utils";
 import { Helmet } from "react-helmet-async";
-import Loading from "../../components/Loading/Loading";
-import ErrorPage from "../../components/ErrorPage/ErrorPage";
+import Loading from "../../components/loading/loading";
+import ErrorPage from "../../components/error/errorPage";
 
 const reducer = (state, action) => {
   switch (action.type) {

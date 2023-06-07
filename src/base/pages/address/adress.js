@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
-import CheckoutSteps from "../../components/CheckoutSteps/CheckoutSteps";
+import CheckoutSteps from "../../components/checkOutSteps/checkoutSteps";
 import { Store } from "../../Store";
-import "./AddressPage.css";
+import "./adress.css";
 
 export default function AddressPage() {
   const navigate = useNavigate();

@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
-import Loading from "../../components/Loading/Loading";
+import Loading from "../../components/loading/loading";
 import { Store } from "../../Store";
 import { getError } from "../../utils";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import LoadingDots from "../../components/LoadingDots/LoadingDots";
+import LoadingDots from "../../components/dotsLoading/dotsLoading";
 
 const reducer = (state, action) => {
   switch (action.type) {

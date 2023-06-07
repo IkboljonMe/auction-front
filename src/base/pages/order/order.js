@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useReducer } from "react";
-import Loading from "../../components/Loading/Loading";
-import LoadingDots from "../../components/LoadingDots/LoadingDots";
-import ErrorPage from "../../components/ErrorPage/ErrorPage";
+import Loading from "../../components/loading/loading";
+import LoadingDots from "../../components/dotsLoading/dotsLoading";
+import ErrorPage from "../../components/error/errorPage";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { Helmet } from "react-helmet-async";
 import { Store } from "../../Store";

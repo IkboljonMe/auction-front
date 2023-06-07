@@ -5,8 +5,8 @@ import { Store } from "../../Store";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { getError } from "../../utils";
-import LoadingDots from "../../components/LoadingDots/LoadingDots";
-import ErrorPage from "../../components/ErrorPage/ErrorPage";
+import LoadingDots from "../../components/dotsLoading/dotsLoading";
+import ErrorPage from "../../components/error/errorPage";
 
 const reducer = (state, action) => {
   switch (action.type) {

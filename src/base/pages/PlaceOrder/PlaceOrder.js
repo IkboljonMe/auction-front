@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
-import CheckoutSteps from "../../components/CheckoutSteps/CheckoutSteps";
+import CheckoutSteps from "../../components/checkOutSteps/checkoutSteps";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import Loading from "../../components/Loading/Loading";
+import Loading from "../../components/loading/loading";
 import { toast } from "react-toastify";
 import { getError } from "../../utils";
 import { Store } from "../../Store";
-import "./PlaceOrder.css";
+import "./placeOrder.css";
 
 const reducer = (state, action) => {
   switch (action.type) {

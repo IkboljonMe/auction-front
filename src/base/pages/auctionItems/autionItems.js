@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import io from "socket.io-client";
-import ErrorPage from "../../components/ErrorPage/ErrorPage";
-import Loading from "../../components/Loading/Loading";
+import ErrorPage from "../../components/error/errorPage";
+import Loading from "../../components/loading/loading";
 import { Store } from "../../Store";
 
 const initialState = {
