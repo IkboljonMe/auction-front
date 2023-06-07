@@ -1,28 +1,27 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import axios from "axios";
-import Home from "./Pages/Home/Home";
-import Header from "./Pages/Header/Header";
-import LoginPage from "./Pages/SignIn/SignIn";
-import RegisterPage from "./Pages/SignUp/SignUp";
-import CartPage from "./Pages/CartPage/CartPage";
-import OrderPage from "./Pages/OrderPage/OrderPage";
-import AddressPage from "./Pages/AddressPage/AddressPage";
-import PaymentMethod from "./Pages/PaymentMethod/PaymentMethod";
-import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
-import OrderHistory from "./Pages/OrderHistory/OrderHistory";
-import ProfilePage from "./Pages/ProfilePage/ProfilePage";
-import SearchPage from "./Pages/SearchPage/SearchPage";
-import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
-import Dashboard from "./Pages/Dashboard/Dashboard";
-import AdminRoute from "./Components/AdminRoute/AdminRoute";
-import OrderListPage from "./Pages/OrderListPage/OrderListPage";
-import UserListPage from "./Pages/UserListPage/UserListPage";
-import UserEditPage from "./Pages/UserEditPage/UserEditPage";
-import SellerRoute from "./Components/SellerRoute/SellerRoute";
-import Auction from "./Pages/Auction/Auction";
-import CreateAuction from "./Pages/CreateAuction/CreateAuction";
-import AuctionDetail from "./Pages/AuctionDetails/AuctionDetail";
+import Home from "./base/pages/Home/Home";
+import Header from "./base/pages/Header/Header";
+import LoginPage from "./base/pages/SignIn/SignIn";
+import RegisterPage from "./base/pages/SignUp/SignUp";
+import CartPage from "./base/pages/CartPage/CartPage";
+import OrderPage from "./base/pages/OrderPage/OrderPage";
+import AddressPage from "./base/pages/AddressPage/AddressPage";
+import PaymentMethod from "./base/pages/PaymentMethod/PaymentMethod";
+import PlaceOrder from "./base/pages/PlaceOrder/PlaceOrder";
+import OrderHistory from "./base/pages/OrderHistory/OrderHistory";
+import ProfilePage from "./base/pages/ProfilePage/ProfilePage";
+import ProtectedRoute from "./base/components/ProtectedRoute/ProtectedRoute";
+import Dashboard from "./base/pages/Dashboard/Dashboard";
+import AdminRoute from "./base/components/AdminRoute/AdminRoute";
+import OrderListPage from "./base/pages/OrderListPage/OrderListPage";
+import UserListPage from "./base/pages/UserListPage/UserListPage";
+import UserEditPage from "./base/pages/UserEditPage/UserEditPage";
+import SellerRoute from "./base/components/SellerRoute/SellerRoute";
+import Auction from "./base/pages/Auction/Auction";
+import CreateAuction from "./base/pages/CreateAuction/CreateAuction";
+import AuctionDetail from "./base/pages/AuctionDetails/AuctionDetail";
 
 // Set the base URL for all axios requests
 axios.defaults.baseURL =
@@ -123,16 +122,6 @@ function App() {
               <ProtectedRoute>
                 <ProfilePage />
               </ProtectedRoute>
-            </>
-          }
-        />
-
-        <Route
-          path="/search"
-          element={
-            <>
-              <Header />
-              <SearchPage />
             </>
           }
         />
