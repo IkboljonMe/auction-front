@@ -1,26 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import hn from '../SignUp/Assets/hn.png';
-import avatar from './Assets/avatar.svg';
-import unlock from './Assets/unlock.svg';
-import axios from 'axios';
-import { Store } from '../../Store';
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { getError } from '../../utils';
-import { FaUser,FaUnlockKeyhole } from 'react-icons/fa';
-import {AiTwotoneLock } from 'react-icons/ai';
-import './signIn.css'
-function LoginPage() {
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import hn from "../register/Assets/hn.png";
+import avatar from "./Assets/avatar.svg";
+import axios from "axios";
+import { Store } from "../../Store";
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { getError } from "../../utils";
+import { FaUser } from "react-icons/fa";
+import { AiTwotoneLock } from "react-icons/ai";
+import "./login.css";
+function Login() {
   const navigate = useNavigate();
   const { search } = useLocation();
-  const redirectInUrl = new URLSearchParams(search).get('redirect');
-  const redirect = redirectInUrl ? redirectInUrl : '/';
+  const redirectInUrl = new URLSearchParams(search).get("redirect");
+  const redirect = redirectInUrl ? redirectInUrl : "/";
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
@@ -28,13 +27,13 @@ function LoginPage() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('/api/users/signin', {
+      const { data } = await axios.post("/api/users/signin", {
         email,
         password,
       });
-      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
-      localStorage.setItem('userInfo', JSON.stringify(data));
-      navigate(redirect || '/');
+      ctxDispatch({ type: "USER_SIGNIN", payload: data });
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      navigate(redirect || "/");
     } catch (err) {
       toast.error(getError(err));
     }
@@ -54,7 +53,7 @@ function LoginPage() {
       </Helmet>
 
       <h2 className="absolute top-[5%] right-[5%] text-3xl font-bold">
-        <Link to={'/'}>
+        <Link to={"/"}>
           <i className="fas fa-times coral hover:animate-pulse delay-500"></i>
         </Link>
       </h2>
@@ -63,11 +62,11 @@ function LoginPage() {
         src={hn}
         alt="hn"
         className="fixed hidden lg:block inset-0 h-full"
-        style={{ zIndex: '-1' }}
+        style={{ zIndex: "-1" }}
       />
       <div className="w-screen h-screen flex flex-col justify-center items-center lg:grid lg:grid-cols-2">
-          <div></div>
-          <form
+        <div></div>
+        <form
           className="flex flex-col justify-center items-center w-1/2"
           onSubmit={submitHandler}
         >
@@ -76,7 +75,7 @@ function LoginPage() {
             Welcome to you Auction
           </h2>
           <div className="relative font-sans">
-          <FaUser size={25} className='absolute faUser'/>
+            <FaUser size={25} className="absolute faUser" />
 
             <input
               type="email"
@@ -87,7 +86,7 @@ function LoginPage() {
             />
           </div>
           <div className="relative mt-8">
-           <AiTwotoneLock size={27} className='absolute faUser'/>
+            <AiTwotoneLock size={27} className="absolute faUser" />
             <input
               type="password"
               placeholder="Password"
@@ -103,12 +102,8 @@ function LoginPage() {
             >
               New Customer?
             </Link>
-            
           </div>
-          <button
-            type="submit"
-            className="bgCoral"
-          >
+          <button type="submit" className="bgCoral">
             Login
           </button>
         </form>
@@ -117,4 +112,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Login;

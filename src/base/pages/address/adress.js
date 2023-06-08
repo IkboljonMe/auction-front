@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
-import CheckoutSteps from "../../components/checkOutSteps/checkoutSteps";
+import CheckoutSteps from "../../components/checkoutSteps/checkoutSteps";
 import { Store } from "../../Store";
 import "./adress.css";
 

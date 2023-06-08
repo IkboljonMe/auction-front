@@ -10,8 +10,8 @@ import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getError } from "../../utils";
-import '../SignIn/signIn.css'
-function RegisterPage() {
+import "../login/login.css";
+function Register() {
   const navigate = useNavigate();
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get("redirect");
@@ -153,4 +153,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+export default Register;

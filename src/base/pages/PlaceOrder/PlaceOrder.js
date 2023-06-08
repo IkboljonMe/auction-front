@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
-import CheckoutSteps from "../../components/checkOutSteps/checkoutSteps";
+import CheckoutSteps from "../../components/checkoutSteps/checkoutSteps";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Loading from "../../components/loading/loading";

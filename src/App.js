@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import axios from "axios";
 import Home from "./base/pages/home/home";
 import Header from "./base/pages/header/header";
-import LoginPage from "./base/pages/SignIn/SignIn";
-import RegisterPage from "./base/pages/SignUp/SignUp";
+import Login from "./base/pages/login/login";
+import Register from "./base/pages/register/register";
 import CartPage from "./base/pages/cart/cart";
 import OrderPage from "./base/pages/order/order";
 import AddressPage from "./base/pages/address/adress";
@@ -47,8 +47,8 @@ function App() {
             </>
           }
         />
-        <Route path="/signin" element={<LoginPage />} />
-        <Route path="/signup" element={<RegisterPage />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="/signup" element={<Register />} />
 
         <Route
           path="/shipping"
@@ -116,7 +116,6 @@ function App() {
         />
 
         {/* Admin Routes */}
-        
 
         <Route
           path="/admin/users"

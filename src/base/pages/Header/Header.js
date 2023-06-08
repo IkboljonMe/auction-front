@@ -3,10 +3,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Store } from "../../Store";
-import './header.css'
-import {FaShoppingCart,FaUser, FaUserAlt} from 'react-icons/fa'
+import "./header.css";
+import { FaShoppingCart, FaUser, FaUserAlt } from "react-icons/fa";
 
-export default function Navbar() {
+export default function Header() {
   const [text, setText] = useState("");
   const navigate = useNavigate();
 
@@ -112,7 +112,7 @@ export default function Navbar() {
                   </span>
                 )}
                 <span className="ml-1.5 text-base text-gray-600 hover:text-gray-900">
-                  <FaShoppingCart size={23}/>
+                  <FaShoppingCart size={23} />
                 </span>
               </span>
             </Link>
@@ -158,11 +158,9 @@ export default function Navbar() {
                       <span className="fs-1 text-black fWeight">
                         {userInfo.name}
                       </span>
-                      <div className="font-medium ">
-                        {userInfo.email}
-                      </div>
+                      <div className="font-medium ">{userInfo.email}</div>
                     </div>
-                     
+
                     <div className="py-2">
                       <Link
                         to="/admin/users"
@@ -184,8 +182,7 @@ export default function Navbar() {
                   className="flex items-center mr-2 hover:text-gray-900 focus:outline-none cursor-pointer"
                   onClick={toggleDropdown}
                 >
-                  <FaUserAlt className="w-8 h-6 rounded-full hover:scale-110 duration-200"/>
-                  
+                  <FaUserAlt className="w-8 h-6 rounded-full hover:scale-110 duration-200" />
                 </button>
                 {isOpen && (
                   <div
@@ -198,7 +195,7 @@ export default function Navbar() {
                         {userInfo.email}
                       </div>
                     </div>
-                    
+
                     <div className="py-2">
                       <Link
                         to="#signout"

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import CheckoutSteps from "../../components/checkOutSteps/checkoutSteps";
+import CheckoutSteps from "../../components/checkoutSteps/checkoutSteps";
 import { Helmet } from "react-helmet-async";
 import "./payMethod.css";
 import { Store } from "../../Store";
