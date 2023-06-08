@@ -52,13 +52,7 @@ export default function Header() {
     localStorage.removeItem("paymentMethod");
     window.location.href = "/signin";
   }
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleOutsideClick = () => {
-    setIsMenuOpen(false);
-  };
-
+  console.log(userInfo);
   return (
     <>
       <ToastContainer position="bottom-center" limit={1} />
@@ -82,27 +76,6 @@ export default function Header() {
           </Link>
 
           <nav className="flex  flex-wrap  items-center text-base ">
-            {userInfo && userInfo.isSeller && (
-              <div className="mr-4">
-                {isMenuOpen && (
-                  <div
-                    onClick={handleOutsideClick}
-                    className="absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-lg right-4 mt-2 w-auto left-auto"
-                  >
-                    <div className="px-4 py-3 text-sm text-gray-900 mt-1 whitespace-normal">
-                      <div className="font-medium truncate">
-                        {userInfo.email}
-                      </div>
-                    </div>
-                    <ul
-                      className="py-2 text-sm text-gray-700"
-                      aria-labelledby="dropdownUserAvatarButton"
-                    ></ul>
-                  </div>
-                )}
-              </div>
-            )}
-
             <div className="hover:text-gray-900 mr-6">
               <button className="flex items-center mr-2 hover:text-gray-900 focus:outline-none cursor-pointer">
                 {userInfo.isAdmin ? "You are Admin" : "You are not admin!"}
