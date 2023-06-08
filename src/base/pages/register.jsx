@@ -71,83 +71,68 @@ function Register() {
           <i className="fas fa-times coral hover:animate-pulse delay-500"></i>
         </Link>
       </h2>
-
-      <img
-        src={Hn}
-        alt="Hn"
-        className="fixed hidden p-6  lg:block inset-0 h-full"
-        style={{ zIndex: "-1" }}
-      />
-      <div className="w-screen h-screen flex flex-col justify-space-between  lg:grid lg:grid-cols-2">
-        <div></div>
-        <form
-          className="flex flex-col justify-center items-center w-1/2"
-          onSubmit={submitHandler}
-        >
-          <img
-            src={avatar}
-            className="w-32 transition-all duration-500 transform scale-x-[-1]"
-            alt="avatar"
+      <form
+        className="flex w-full h-screen flex-col gap-10 justify-center items-center "
+        onSubmit={submitHandler}
+      >
+        <h2 className="my-8 font-display font-bold text-3xl text-gray-700 text-center">
+          Register
+        </h2>
+        <div className="relative font-sans">
+          <i className="fa fa-user-tie absolute coral"></i>
+          <input
+            type="text"
+            placeholder="Name"
+            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            required
+            onChange={(e) => setName(e.target.value)}
           />
-          <h2 className="my-8 font-display font-bold text-3xl text-gray-700 text-center">
-            Register
-          </h2>
-          <div className="relative font-sans">
-            <i className="fa fa-user-tie absolute coral"></i>
-            <input
-              type="text"
-              placeholder="Name"
-              className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
-              required
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="relative mt-8 font-sans">
-            <i className="fa fa-envelope absolute coral"></i>
-            <input
-              type="email"
-              placeholder="Email"
-              className="pl-8 w-64 border-b-2 inputFocus font-display outline-none  transition-all duration-500"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="relative mt-8 font-sans">
-            <i className="fa fa-lock absolute coral"></i>
-            <input
-              type="password"
-              placeholder="Password"
-              className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="relative mt-8 font-sans">
-            <i className="fa fa-shield-alt absolute coral"></i>
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
-              required
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-          </div>
-          <div className="flex text-center">
-            <Link
-              to={`/signin?redirect=${redirect}`}
-              className="self-start py-4 mt-4 mr-4 text-gray-600 font-semibold opacity-75 hover:opacity-100 transition-all duration-500"
-            >
-              Already have an account? <br /> Sign In
-            </Link>
-          </div>
-          <button
-            type="submit"
-            className="py-3 px-20 bgCoral rounded-full font-semibold uppercase text-lg mt-1 transform hover:translate-y-1 transition-all duration-500"
+        </div>
+        <div className="relative mt-8 font-sans">
+          <i className="fa fa-envelope absolute coral"></i>
+          <input
+            type="email"
+            placeholder="Email"
+            className="pl-8 w-64 border-b-2 inputFocus font-display outline-none  transition-all duration-500"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="relative mt-8 font-sans">
+          <i className="fa fa-lock absolute coral"></i>
+          <input
+            type="password"
+            placeholder="Password"
+            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="relative mt-8 font-sans">
+          <i className="fa fa-shield-alt absolute coral"></i>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            required
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+        <div className="flex text-center">
+          <Link
+            to={`/signin?redirect=${redirect}`}
+            className="self-start py-4 mt-4 mr-4 text-gray-600 font-semibold opacity-75 hover:opacity-100 transition-all duration-500"
           >
-            Register
-          </button>
-        </form>
-      </div>
+            Already have an account? <br /> Sign In
+          </Link>
+        </div>
+        <button
+          type="submit"
+          className="py-3 px-20 bgCoral rounded-full font-semibold uppercase text-lg mt-1 transform hover:translate-y-1 transition-all duration-500"
+        >
+          Register
+        </button>
+      </form>
     </div>
   );
 }

@@ -49,7 +49,7 @@ function Login() {
     <div className="relative">
       <ToastContainer position="bottom-center" limit={1} />
       <Helmet>
-        <title>Sign In-HUB</title>
+        <title>Login</title>
       </Helmet>
 
       <h2 className="absolute top-[5%] right-[5%] text-3xl font-bold">
@@ -58,56 +58,47 @@ function Login() {
         </Link>
       </h2>
 
-      <img
-        src={hn}
-        alt="hn"
-        className="fixed hidden lg:block inset-0 h-full"
-        style={{ zIndex: "-1" }}
-      />
-      <div className="w-screen h-screen flex flex-col justify-center items-center lg:grid lg:grid-cols-2">
-        <div></div>
-        <form
-          className="flex flex-col justify-center items-center w-1/2"
-          onSubmit={submitHandler}
-        >
-          <img src={avatar} className="w-32" alt="avatar" />
-          <h2 className="my-8 font-display font-bold text-3xl text-gray-700 text-center">
-            Welcome to you Auction
-          </h2>
-          <div className="relative font-sans">
-            <FaUser size={25} className="absolute faUser" />
-
-            <input
-              type="email"
-              placeholder="Email"
-              className="inputFocus w-80 p-2 px-6 border-2 font-display outline-none  transition-all duration-500"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="relative mt-8">
-            <AiTwotoneLock size={27} className="absolute faUser" />
-            <input
-              type="password"
-              placeholder="Password"
-              className="inputFocus w-80 p-2 px-8 border-2 font-display outline-none  transition-all duration-500"
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="flex">
-            <Link
-              to={`/signup?redirect=${redirect}`}
-              className="self-start py-4 mt-4 mr-4 text-gray-600  font-semibold opacity-75 hover:opacity-100 transition-all duration-500"
-            >
-              New Customer?
-            </Link>
-          </div>
-          <button type="submit" className="bgCoral">
-            Login
-          </button>
-        </form>
-      </div>
+      <form
+        className="flex w-full h-screen flex-col gap-10 justify-center items-center "
+        onSubmit={submitHandler}
+      >
+        <h2 className="my-8 font-display font-bold text-3xl text-gray-700 text-center">
+          Welcome back to
+          <span className="ml-3 text-3xl font-bold">
+            Auction
+            <span style={{ color: "#ffA000", fontWeight: "900" }}>HUB</span>
+          </span>
+        </h2>
+        <div className="relative font-sans">
+          <input
+            type="email"
+            placeholder="Email"
+            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="relative mt-8">
+          <input
+            type="password"
+            placeholder="Password"
+            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="flex">
+          <Link
+            to={`/signup?redirect=${redirect}`}
+            className="self-start py-4 mt-4 mr-4 text-gray-600  font-semibold opacity-75 hover:opacity-100 transition-all duration-500"
+          >
+            Do you have an account? Register here
+          </Link>
+        </div>
+        <button type="submit" className="bgCoral">
+          Login
+        </button>
+      </form>
     </div>
   );
 }

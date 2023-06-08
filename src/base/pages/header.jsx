@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import { Store } from "../context/Store";
 import "../styles/header.css";
 import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
-
+import { useLocation } from "react-router-dom";
 export default function Header() {
+  const location = useLocation();
+
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
@@ -72,14 +74,18 @@ export default function Header() {
             to="/auction"
             className="text-3xl title-font font-medium  text-gray-900"
           >
-            Go to Auction
+            {location.pathname === "/auction"
+              ? "Welocome to auction"
+              : "Go to Auction"}
           </Link>
 
           <nav className="flex  flex-wrap  items-center text-base ">
             <div className="hover:text-gray-900 mr-6">
-              <button className="flex items-center mr-2 hover:text-gray-900 focus:outline-none cursor-pointer">
-                {userInfo.isAdmin ? "You are Admin" : "You are not admin!"}
-              </button>
+              {userInfo && (
+                <button className="flex items-center mr-2 hover:text-gray-900 focus:outline-none cursor-pointer">
+                  {userInfo.isAdmin ? "You are an Admin" : "You are not admin!"}
+                </button>
+              )}
             </div>
             <Link to="/cart" className="relative inline-flex items-center mr-6">
               <span className="relative inline-flex items-center rounded px-2.5 py-1.5 font-medium">
@@ -123,7 +129,7 @@ export default function Header() {
                         className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                         onClick={signoutHandler}
                       >
-                        Sign out
+                        Log out
                       </Link>
                     </div>
                   </div>
@@ -131,7 +137,7 @@ export default function Header() {
               </div>
             ) : (
               <Link to="/signin" className="mr-5 hover:text-gray-900">
-                Sign In
+                Log in
               </Link>
             )}
           </nav>
