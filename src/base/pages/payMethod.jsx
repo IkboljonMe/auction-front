@@ -68,24 +68,12 @@ export default function PaymentPage() {
   };
 
   return (
-    <div className="area">
-      <ul className="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+    <div className="area h-full">
       <Helmet>
         <title>Payment-AuctionHUB</title>
       </Helmet>
-      <CheckoutSteps step1 step2 step3 />
-      <div className="max-w-3xl mx-auto px-4 py-8 flex flex-col items-center justify-center">
+
+      <div className="max-w-3xl h-5/6 mx-auto px-4 py-8 flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold mb-8">Select Payment Method</h1>
         <div className="flex space-x-16 justify-center items-center">
           <PaymentCard
@@ -113,6 +101,7 @@ export default function PaymentPage() {
           Continue
         </button>
       </div>
+      <CheckoutSteps step1 step2 step3 />
     </div>
   );
 }
