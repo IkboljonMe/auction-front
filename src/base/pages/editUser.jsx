@@ -93,7 +93,7 @@ export default function UserEditPage() {
   return (
     <div>
       <Helmet>
-        <title>Edit User Details-AEHBidding</title>
+        <title>Edit User Details-AuctionHUB</title>
       </Helmet>
       {loading ? (
         <Loading />

@@ -63,7 +63,7 @@ function Register() {
     <div className="relative">
       <ToastContainer position="bottom-center" limit={1} />
       <Helmet>
-        <title>Sign Up-AEHBidding</title>
+        <title>Sign Up-AuctionHUB</title>
       </Helmet>
 
       <h2 className="absolute top-[5%] right-[5%] text-3xl font-bold">

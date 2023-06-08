@@ -31,7 +31,7 @@ export default function CartPage() {
   return (
     <div className="shoppingCart">
       <Helmet>
-        <title>Cart-AEHBidding</title>
+        <title>Cart-AuctionHUB</title>
       </Helmet>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="mb-8 text-3xl text-white font-bold">Shopping Cart</h1>

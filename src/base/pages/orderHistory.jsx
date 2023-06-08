@@ -49,7 +49,7 @@ export default function OrderHistory() {
   return (
     <div>
       <Helmet>
-        <title>Order History-AEHBidding</title>
+        <title>Order History-AuctionHUB</title>
       </Helmet>
       {loading ? (
         <Loading />

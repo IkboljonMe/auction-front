@@ -96,7 +96,7 @@ function ProfilePage() {
   return (
     <div>
       <Helmet>
-        <title>Profile-AEHBidding</title>
+        <title>Profile-AuctionHUB</title>
       </Helmet>
       {/* component */}
       <div className="flex min-h-fit flex-col justify-center overflow-hidden bg-gray-100 py-6 sm:py-12">

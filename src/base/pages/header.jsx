@@ -73,7 +73,7 @@ export default function Header() {
             className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 mb-0 md:mb-0"
           >
             <span className="ml-3 text-3xl font-bold">
-              <span className="text-base-500">AEH</span>Bidding
+              <span className="text-base-500">Auction</span>HUB
             </span>
           </Link>
 

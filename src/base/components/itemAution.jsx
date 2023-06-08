@@ -55,7 +55,7 @@ function AuctionItem(props) {
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden" key={id}>
       <Helmet>
-        <title>Auction House-AEHBidding</title>
+        <title>Auction House-AuctionHUB</title>
       </Helmet>
       <div className="relative">
         <Tilt

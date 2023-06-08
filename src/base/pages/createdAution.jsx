@@ -109,7 +109,7 @@ const CreateAuction = () => {
   return (
     <>
       <Helmet>
-        <title>Create Auction-AEHBidding</title>
+        <title>Create Auction-AuctionHUB</title>
       </Helmet>
 
       {error ? (

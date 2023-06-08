@@ -97,7 +97,7 @@ export default function PlaceOrder() {
       </ul>
       <CheckoutSteps step1 step2 step3 step4 />
       <Helmet>
-        <title>Place Order-AEHBidding</title>
+        <title>Place Order-AuctionHUB</title>
       </Helmet>
       <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row">
         {/* Preview Order */}

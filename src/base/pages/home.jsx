@@ -9,17 +9,17 @@ function Home() {
     <div className="home__component">
       <div className="text-center pb-4 pt-8">
         <Helmet>
-          <title>AEHBidding</title>
+          <title>AuctionHUB</title>
         </Helmet>
       </div>
       <div className="imagContainer">
         <div className="">
           <h1 class="hero-text mb-30 h-6 text-white">
-            Welcome to <span class="highlight">AEH</span>Bidding
+            Welcome to <span class="highlight">Auction</span>HUB
           </h1>
           <Link to="/auction">
             <button className="bg-blue-500 hover:bg-blue-700  hover:text-white duration-200 sm:mr-2 text-cyan-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform hover:scale-110">
-              Start bidding
+              Start HUB
             </button>
           </Link>
         </div>

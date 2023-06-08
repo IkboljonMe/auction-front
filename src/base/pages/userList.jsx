@@ -93,7 +93,7 @@ export default function UserListPage() {
   return (
     <div>
       <Helmet>
-        <title>Manage Users-AEHBidding</title>
+        <title>Manage Users-AuctionHUB</title>
       </Helmet>
       {loading ? (
         <Loading />

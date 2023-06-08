@@ -90,7 +90,7 @@ export default function OrderListPage() {
   return (
     <div>
       <Helmet>
-        <title>Manage Orders-AEHBidding</title>
+        <title>Manage Orders-AuctionHUB</title>
       </Helmet>
       {loading ? (
         <Loading />

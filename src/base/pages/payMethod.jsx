@@ -82,7 +82,7 @@ export default function PaymentPage() {
         <li></li>
       </ul>
       <Helmet>
-        <title>Payment-AEHBidding</title>
+        <title>Payment-AuctionHUB</title>
       </Helmet>
       <CheckoutSteps step1 step2 step3 />
       <div className="max-w-3xl mx-auto px-4 py-8 flex flex-col items-center justify-center">
