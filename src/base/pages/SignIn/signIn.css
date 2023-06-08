@@ -1,0 +1,26 @@
+.faUser{
+    top: 13px;
+    padding: 0 3px;
+    /* padding: 7px 17px; */
+    color: rgb(243, 88, 31);
+}
+
+.inputFocus:focus{
+    border-bottom: 2px solid rgb(243, 88, 31);
+}
+
+.bgCoral{
+    font-size: 22px;
+    border: 1px solid rgb(243, 88, 31);
+    border-radius: 12px;
+    padding: 5px 18px;
+
+    /* background-color: rgb(243, 88, 31); */
+}
+.bgCoral:hover{
+    border: 2px solid rgb(243, 88, 31);
+    font-weight: 700;
+}
+.coral{
+    color: rgb(243, 88, 31);
+}

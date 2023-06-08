@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import wave from './Assets/wave.png';
+import hn from '../SignUp/Assets/hn.png';
 import avatar from './Assets/avatar.svg';
 import unlock from './Assets/unlock.svg';
 import axios from 'axios';
@@ -10,7 +10,9 @@ import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getError } from '../../utils';
-
+import { FaUser,FaUnlockKeyhole } from 'react-icons/fa';
+import {AiTwotoneLock } from 'react-icons/ai';
+import './signIn.css'
 function LoginPage() {
   const navigate = useNavigate();
   const { search } = useLocation();
@@ -53,42 +55,43 @@ function LoginPage() {
 
       <h2 className="absolute top-[5%] right-[5%] text-3xl font-bold">
         <Link to={'/'}>
-          <i className="fas fa-times text-cyan-500 hover:animate-pulse delay-500"></i>
+          <i className="fas fa-times coral hover:animate-pulse delay-500"></i>
         </Link>
       </h2>
 
       <img
-        src={wave}
-        alt="wave"
+        src={hn}
+        alt="hn"
         className="fixed hidden lg:block inset-0 h-full"
         style={{ zIndex: '-1' }}
       />
       <div className="w-screen h-screen flex flex-col justify-center items-center lg:grid lg:grid-cols-2">
-       <div></div>
-        <form
+          <div></div>
+          <form
           className="flex flex-col justify-center items-center w-1/2"
           onSubmit={submitHandler}
         >
           <img src={avatar} className="w-32" alt="avatar" />
           <h2 className="my-8 font-display font-bold text-3xl text-gray-700 text-center">
-            Welcome to you
+            Welcome to you Auction
           </h2>
           <div className="relative font-sans">
-            <i className="fa fa-user absolute text-primarycolor"></i>
+          <FaUser size={25} className='absolute faUser'/>
+
             <input
               type="email"
               placeholder="Email"
-              className="pl-8 w-64 border-b-2 font-display outline-none focus:border-primarycolor transition-all duration-500"
+              className="inputFocus w-80 p-2 px-6 border-2 font-display outline-none  transition-all duration-500"
               required
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="relative mt-8">
-            <i className="fa fa-lock absolute text-primarycolor"></i>
+           <AiTwotoneLock size={27} className='absolute faUser'/>
             <input
               type="password"
               placeholder="Password"
-              className="pl-8 w-64 border-b-2 font-display outline-none focus:border-primarycolor transition-all duration-500"
+              className="inputFocus w-80 p-2 px-8 border-2 font-display outline-none  transition-all duration-500"
               required
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -96,20 +99,15 @@ function LoginPage() {
           <div className="flex">
             <Link
               to={`/signup?redirect=${redirect}`}
-              className="self-start py-4 mt-4 mr-4 text-gray-600 font-semibold opacity-75 hover:opacity-100 transition-all duration-500"
+              className="self-start py-4 mt-4 mr-4 text-gray-600  font-semibold opacity-75 hover:opacity-100 transition-all duration-500"
             >
               New Customer?
             </Link>
-            <Link
-              to="/"
-              className="self-end py-4 mt-4 ml-4 text-gray-600 font-bold opacity-75 hover:opacity-100 transition-all duration-500"
-            >
-              Forgot password?
-            </Link>
+            
           </div>
           <button
             type="submit"
-            className="py-3 px-20 bg-primarycolor rounded-full text-white font-semibold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
+            className="bgCoral"
           >
             Login
           </button>
