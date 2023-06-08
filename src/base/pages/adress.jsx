@@ -64,18 +64,12 @@ export default function Address() {
             </h1>
           </div>
           <form
-            className="bg-white shadow-md rounded px-8 pt-6 pb-2 mb-4"
+            className="bg-inherit shadow-md rounded px-8 pt-6 pb-2 mb-4"
             onSubmit={submitHandler}
           >
-            <div className="mb-6 relative">
-              <label
-                className="block text-gray-700 absolute  font-bold mb-2"
-                htmlFor="fullName"
-              >
-                Full Name
-              </label>
+            <div className="bg-inherit mb-6 relative">
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="bg-inherit shadow appearance-none border rounded w-full py-4 px-5 placeholder:text-orange-400 text-orange-400 border-orange-500 leading-tight focus:outline-none focus:shadow-outline"
                 id="fullName"
                 type="text"
                 value={fullName}
@@ -85,14 +79,8 @@ export default function Address() {
               />
             </div>
             <div className="mb-6 relative">
-              <label
-                className="block absolute text-gray-700 font-bold mb-2"
-                htmlFor="address"
-              >
-                Address
-              </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="bg-inherit shadow appearance-none border rounded w-full py-4 px-5 placeholder:text-orange-400 text-orange-400 border-orange-500 leading-tight focus:outline-none focus:shadow-outline"
                 id="address"
                 type="text"
                 value={address}
@@ -102,14 +90,8 @@ export default function Address() {
               />
             </div>
             <div className="mb-6 relative">
-              <label
-                className="block absolute text-gray-700 font-bold mb-2"
-                htmlFor="city"
-              >
-                City
-              </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="bg-inherit shadow appearance-none border rounded w-full py-4 px-5 placeholder:text-orange-400 text-orange-400 border-orange-500 leading-tight focus:outline-none focus:shadow-outline"
                 id="city"
                 type="text"
                 value={city}
@@ -119,14 +101,8 @@ export default function Address() {
               />
             </div>
             <div className="mb-6 relative">
-              <label
-                className="block absolute text-gray-700 font-bold mb-2"
-                htmlFor="pinCode"
-              >
-                Pin Code
-              </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="bg-inherit shadow appearance-none border rounded w-full py-4 px-5 placeholder:text-orange-400 text-orange-400 border-orange-500 leading-tight focus:outline-none focus:shadow-outline"
                 id="pinCode"
                 type="text"
                 value={pinCode}
@@ -136,14 +112,8 @@ export default function Address() {
               />
             </div>
             <div className="mb-4 relative">
-              <label
-                className="block absolute text-gray-700 font-bold mb-2"
-                htmlFor="country"
-              >
-                Country
-              </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="bg-inherit shadow appearance-none border rounded w-full py-4 px-5 placeholder:text-orange-400 text-orange-400 border-orange-500 leading-tight focus:outline-none focus:shadow-outline"
                 id="country"
                 type="text"
                 value={country}
