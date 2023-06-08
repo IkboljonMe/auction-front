@@ -50,7 +50,7 @@ export default function Address() {
   };
 
   return (
-    <div className="area h-full">
+    <div className="area h-screen">
       <Helmet>
         <title>Shipping Address-AuctionHUB</title>
       </Helmet>
@@ -58,7 +58,9 @@ export default function Address() {
       <div className="flex justify-center bgIndigo items-center context h-5/6">
         <div className="w50">
           <div className="text-center">
-            <h1 className="text-2xl text-white font-bold my-4">Shipping Address</h1>
+            <h1 className="text-2xl text-white font-bold my-4">
+              Shipping Address
+            </h1>
           </div>
           <form
             className="bg-white shadow-md rounded px-8 pt-6 pb-2 mb-4"

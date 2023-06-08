@@ -68,7 +68,7 @@ export default function PaymentPage() {
   };
 
   return (
-    <div className="area h-full">
+    <div className="area h-screen">
       <Helmet>
         <title>Payment-AuctionHUB</title>
       </Helmet>

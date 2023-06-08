@@ -82,7 +82,7 @@ export default function PlaceOrder() {
     }
   }, [cart, navigate]);
   return (
-    <div className="area h-full">
+    <div className="area h-screen">
       <Helmet>
         <title>Place Order-AuctionHUB</title>
       </Helmet>
@@ -139,7 +139,6 @@ export default function PlaceOrder() {
             <div className="bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
               <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
                 Order Summary
-              
               </h2>
               <div className="flex flex-col space-y-4">
                 <div className="flex justify-between">
@@ -183,7 +182,7 @@ export default function PlaceOrder() {
           </div>
         </div>
       </div>
-      <CheckoutSteps step1 step2 step3 step4  />
+      <CheckoutSteps step1 step2 step3 step4 />
     </div>
   );
 }
