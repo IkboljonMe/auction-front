@@ -8,16 +8,10 @@ import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 export default function Header() {
   const location = useLocation();
-
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
-
-  // for profile dropdown
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenAdmin, setIsOpenAdmin] = useState(false);
-
-  // eslint-disable-next-line
-
   useEffect(() => {
     document.addEventListener("click", handleDocumentClick);
     return () => {
@@ -80,18 +74,11 @@ export default function Header() {
           </Link>
 
           <nav className="flex  flex-wrap  items-center text-base ">
-            <div className="hover:text-gray-900 mr-6">
-              {userInfo && (
-                <button className="flex items-center mr-2 hover:text-gray-900 focus:outline-none cursor-pointer">
-                  {userInfo.isAdmin ? "You are an Admin" : "You are not admin!"}
-                </button>
-              )}
-            </div>
             <Link to="/cart" className="relative inline-flex items-center mr-6">
               <span className="relative inline-flex items-center rounded px-2.5 py-1.5 font-medium">
                 {cart.cartItems.length > 0 && (
-                  <span className="absolute -top-1 -right-2 h-5 w-5 rounded-full bg-red-500 flex justify-center text-white text-xs items-center">
-                    <span>
+                  <span className="absolute -top-1 -right-2 h-5 w-5 rounded-full bg-red-500 text-white flex justify-center  text-xs items-center">
+                    <span className="bg-inherit">
                       {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                     </span>
                   </span>
