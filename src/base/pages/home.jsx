@@ -1,31 +1,67 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/home.css";
 import { Helmet } from "react-helmet-async";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
+import SwiperCore, { Autoplay } from "swiper";
+import auction1 from "../assets/auction1.jpeg";
+import auction2 from "../assets/auction2.jpeg";
+import auction3 from "../assets/auction3.jpeg";
+import "swiper/css";
+
+SwiperCore.use([Autoplay]);
 
 function Home() {
+  const swiperRef = useRef(null);
+
+  const handleSwiperReachEnd = () => {
+    swiperRef.current.swiper.autoplay.stop();
+    swiperRef.current.swiper.slideTo(0);
+    swiperRef.current.swiper.autoplay.start();
+  };
+
   return (
-    <div className="home__component home">
-      <div className="text-center pb-4 pt-8">
-        <Helmet>
-          <title>AuctionHUB</title>
-        </Helmet>
+    <div className="home__component home flex flex-col h-screen justify-evenly">
+      <Helmet>
+        <title>AuctionHUB</title>
+      </Helmet>
+
+      <p className="text-white text-4xl  pb-6 flex justify-center">
+        Welcom to
+        <span className="ml-3 text-4xl font-bold">
+          Auction
+          <span style={{ color: "#ffA000", fontWeight: "900" }}>HUB</span>
+        </span>
+      </p>
+      <div>
+        <Swiper
+          ref={swiperRef}
+          spaceBetween={50}
+          slidesPerView={1}
+          autoplay={{
+            delay: 1000,
+            reverseDirection: true,
+          }}
+          loop
+          onReachEnd={handleSwiperReachEnd}
+        >
+          <SwiperSlide className="flex justify-center">
+            <img src={auction1} alt="1" />
+          </SwiperSlide>
+          <SwiperSlide className="flex justify-center">
+            <img src={auction2} alt="2" />
+          </SwiperSlide>
+          <SwiperSlide className="flex justify-center">
+            <img src={auction3} alt="3" />
+          </SwiperSlide>
+        </Swiper>
       </div>
-      <div className="imagContainer">
-        <div className="">
-          <h1 class="hero-text mb-30 h-6 text-white">
-            Welcome to <span class="highlight">Auction</span>HUB
-          </h1>
-          <Link to="/auction">
-            <button className="bg-blue-500 hover:bg-blue-700  hover:text-white duration-200 sm:mr-2 text-cyan-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform hover:scale-110">
-              Start HUB
-            </button>
-          </Link>
-        </div>
-        <img
-          src="https://geauction.com/wp-content/uploads/2018/07/5-Auction-Tips-for-Beginners2.jpg"
-          alt="auction"
-        ></img>
+      <div className="flex justify-center ">
+        <Link to="/auction">
+          <button type="submit" className="bgCoral">
+            Join Auction
+          </button>
+        </Link>
       </div>
     </div>
   );
