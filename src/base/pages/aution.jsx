@@ -76,13 +76,14 @@ function AuctionPage() {
 
   return (
     <div className="auction__background h-screen">
-      <div className="flex justify-center pt-4">
+      <div className="flex justify-center pt-10">
         {userInfo && userInfo.isSeller ? (
           <Link
             to="/create-auction"
             className="bgColar flex alignICenter hover:bg-gray-200 hover:text-cyan-600 duration-200 sm:mr-2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
-            <GrAdd size={20} className="mr-2" /> Click here to add Auction
+            <GrAdd size={20} className="mr-2 pt-7 items-center" /> Click here to
+            add Auction
           </Link>
         ) : (
           <></>
@@ -94,7 +95,7 @@ function AuctionPage() {
         ) : error ? (
           <ErrorPage />
         ) : products.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 my-4 gap-10">
+          <div className="grid   grid-cols-1  lg:grid-cols-2 my-4 gap-10">
             {products.reverse().map((product) => (
               <Tilt
                 options={{

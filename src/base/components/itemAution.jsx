@@ -54,7 +54,7 @@ function AuctionItem(props) {
 
   return (
     <div
-      className="flex flex-col px-10 py-20 bg-transparent border-2 mx-auto w-2/3 border-white hover:border-4 hover:border-orange-600 shadow-md rounded-md overflow-hidden"
+      className="flex flex-col px-10 py-20 bg-transparent border-2 mx-auto lg:w-2/3 w-full border-white hover:border-4 hover:border-orange-600 shadow-md rounded-md overflow-hidden"
       key={id}
     >
       <Helmet>

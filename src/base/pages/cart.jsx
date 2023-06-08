@@ -23,15 +23,17 @@ export default function CartPage() {
   };
   console.log(cartItems);
   return (
-    <div className="global__background h-screen flex flex-col justify-between">
+    <div className="global__background h-screen flex flex-col gap-2 justify-between">
       <Helmet>
         <title>Cart-AuctionHUB</title>
       </Helmet>
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="mb-8 text-3xl text-white font-bold">Shopping Cart</h1>
+      <main className="lg:max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className=" text-3xl text-white font-bold flex justify-center">
+          Shopping Cart
+        </h1>
       </main>
-      <div className="checoutCart">
-        <div className="heightLg">
+      <div className=" container lg:max-w-7xl mx-auto w-full flex flex-col gap-5">
+        <div className="">
           {cartItems.length === 0 ? (
             <div className="p-4 border rounded-md bg-gray-100 text-gray-700">
               It is empty. &nbsp;
@@ -81,7 +83,7 @@ export default function CartPage() {
             </div>
           )}
         </div>
-        <div className="heightLg">
+        <div className="">
           <div className="bg-white shadow-lg sm:rounded-lg md:-mt-3">
             <div className="px-4 py-5 sm:p-6">
               <h2 className="mb-4 text-lg font-medium items-center flex justify-center text-gray-900">

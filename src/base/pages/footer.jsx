@@ -1,6 +1,4 @@
 import React from "react";
-import { BiChevronRightCircle } from "react-icons/bi";
-
 const students = [
   {
     name: "Yavuz Selim Bulut",
@@ -17,6 +15,11 @@ const students = [
     id: 42240,
     mobile: "No mobile",
   },
+  {
+    name: "Magsud Hajiyev",
+    id: 42372,
+    mobile: "No mobile",
+  },
 ];
 
 export default function Footer() {
@@ -27,10 +30,12 @@ export default function Footer() {
           <div className="lg:w-1/2">
             <h1 className="text-xl font-bold">About Project</h1>
             <p>
-              Students from the University of Economics and Human Sciences has
-              created an app known as AuctionHUB, where users can participate in
-              bidding with others. To access all the app's functionalities,
-              please seek permission from the administrator.
+              The innovative AuctionHUB app, created by talented students at the
+              University of Economics and Human Sciences, empowers users to
+              participate in lively bidding sessions. To explore the app's
+              complete range of functionalities, it is necessary to obtain
+              approval from the administrator. Check out the contact information
+              of the project contributors provided below.
             </p>
           </div>
           <div className="lg:w-1/2 bg-inherit w-full">

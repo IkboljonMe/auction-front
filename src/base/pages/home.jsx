@@ -23,11 +23,11 @@ function Home() {
 
   return (
     <>
-      <div className="global__background home flex flex-col h-screen justify-between">
+      <div className="global__background gap-6 home flex flex-col lg:h-screen h-fulljustify-between">
         <Helmet>
           <title>AuctionHUB</title>
         </Helmet>
-        <p className="text-white text-4xl  pb-6 flex justify-center">
+        <p className="text-white text-4xl  lg:pt-3  pt-20  flex justify-center">
           Welcom to
           <span className="ml-3 text-4xl font-bold">
             Auction

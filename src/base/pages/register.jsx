@@ -79,41 +79,37 @@ function Register() {
           Register
         </h2>
         <div className="relative font-sans">
-          <i className="fa fa-user-tie absolute coral"></i>
           <input
             type="text"
             placeholder="Name"
-            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            className="inputFocus px-12 border-2 rounded placeholder:text-orange-500 border-orange-600 py-4  font-display outline-none  text-orange-500 transition-all duration-500"
             required
             onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="relative mt-8 font-sans">
-          <i className="fa fa-envelope absolute coral"></i>
           <input
             type="email"
             placeholder="Email"
-            className="pl-8 w-64 border-b-2 inputFocus font-display outline-none  transition-all duration-500"
+            className="inputFocus px-12 border-2 rounded placeholder:text-orange-500 border-orange-600 py-4  font-display outline-none  text-orange-500 transition-all duration-500"
             required
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="relative mt-8 font-sans">
-          <i className="fa fa-lock absolute coral"></i>
           <input
             type="password"
             placeholder="Password"
-            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            className="inputFocus px-12 border-2 rounded placeholder:text-orange-500 border-orange-600 py-4  font-display outline-none  text-orange-500 transition-all duration-500"
             required
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="relative mt-8 font-sans">
-          <i className="fa fa-shield-alt absolute coral"></i>
           <input
             type="password"
             placeholder="Confirm Password"
-            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            className="inputFocus px-12 border-2 rounded placeholder:text-orange-500 border-orange-600 py-4  font-display outline-none  text-orange-500 transition-all duration-500"
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
@@ -123,7 +119,8 @@ function Register() {
             to={`/signin?redirect=${redirect}`}
             className="self-start py-4 mt-4 mr-4 text-gray-600 font-semibold opacity-75 hover:opacity-100 transition-all duration-500"
           >
-            Already have an account? <br /> Sign In
+            Already have an account?{" "}
+            <span className="text-orange-600">Sign In</span>
           </Link>
         </div>
         <button

@@ -87,14 +87,12 @@ export default function PlaceOrder() {
       <Helmet>
         <title>Place Order-AuctionHUB</title>
       </Helmet>
-      <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row h-5/6">
-        {/* Preview Order */}
+      <div className="container mx-auto px-4 py-8 flex  h-5/6">
         <div className="flex flex-col justify-evenly w-full">
           <h1 className="text-2xl font-semibold text-white items-center justify-center flex  mb-4">
             Last Preview Order
           </h1>
-          <div className="grid grid-cols-3">
-            {/* Shipping Card */}
+          <div className="grid lg:grid-cols-3 grid-cols-1">
             <div className="flex flex-col justify-between border-orange-600 border-2 hover:border-5 hover:scale-110  bg-white border-orange-600 border-2  rounded-lg shadow-md p-4 mb-4 mx-4">
               <div>
                 <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
@@ -179,7 +177,7 @@ export default function PlaceOrder() {
             </div>
           </div>
           <button
-            className=" border-orange-500 border-2 hover:bg-orange-500 hover:scale-105 text-white px-4 py-2 rounded mt-4"
+            className=" border-orange-500 border-2 bg-orange-500 hover:bg-transparent hover:scale-105 text-white px-4 py-2 rounded mt-4"
             onClick={placeOrderHandler}
             disabled={cart.cartItems.length === 0}
           >

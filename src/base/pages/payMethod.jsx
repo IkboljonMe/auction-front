@@ -10,7 +10,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 function PaymentCard({ id, value, logo, label, selected, onClick }) {
   return (
     <div
-      className={`border-2  border-gray-300 text-white rounded-lg p-8 cursor-pointer transition-colors duration-300 flex items-center justify-center flex-col lg:w-96 lg:h-64 ${
+      className={`border-2  border-gray-300 text-white rounded-lg p-20 cursor-pointer transition-colors duration-300 flex items-center justify-center flex-col lg:w-96 lg:h-64 ${
         selected
           ? "border-orange-600 shadow-md bg-orange-500 first-letter:"
           : " "
@@ -26,7 +26,7 @@ function PaymentCard({ id, value, logo, label, selected, onClick }) {
       />
       <label
         htmlFor={id}
-        className="flex flex-col items-center justify-center h-full cursor-pointer"
+        className="flex flex-col items-center justify-center lg:h-full h-20 cursor-pointer"
       >
         <img
           className={`w-full h-auto filter grayscale ${
@@ -72,7 +72,7 @@ export default function PaymentPage() {
   };
 
   return (
-    <div className="global__background h-screen">
+    <div className="global__background h-screen flex flex-col gap-10">
       <Helmet>
         <title>Payment-AuctionHUB</title>
       </Helmet>
@@ -101,7 +101,7 @@ export default function PaymentPage() {
             />
           </div>
           <button
-            className="border-orange-600 border-2 h-auto flex flex-row items-center gap-1  hover:bg-orange-600 text-white font-bold   py-2 px-8 rounded focus:outline-none focus:shadow-outline"
+            className="border-orange-500 bg-orange-500 border-2 h-auto flex flex-row items-center gap-1  hover:bg-transparent text-white font-bold   py-2 px-8 rounded focus:outline-none focus:shadow-outline"
             type="submit"
             onClick={submitHandler}
           >

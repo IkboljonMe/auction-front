@@ -124,7 +124,7 @@ export default function Address() {
             </div>
             <div className="flex items-center justify-center mt-6">
               <button
-                className="bgCoral text-black font-bold py-2 px-4 rounded"
+                className="bgCoral text-white hover:bg-transparent bg-orange-500 font-bold py-2 px-4 rounded"
                 type="submit"
               >
                 Continue
