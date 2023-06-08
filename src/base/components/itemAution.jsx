@@ -66,11 +66,11 @@ function AuctionItem(props) {
 
         {userInfo && userInfo.isAdmin && (
           <button className="absolute top-0 right-0" onClick={handleDelete}>
-            <i className="fas fa-trash-alt text-gray-200 bg-transparent hover:text-gray-500 hover:bg-gray-200 duration-200 px-2 py-2"></i>
+            <i className="fas fa-trash-alt text-red-600 bg-transparent hover:text-red-900 hover:bg-gray-200 duration-200 px-2 py-2"></i>
           </button>
         )}
       </div>
-      <div className="px-4 py-2 flex flex-col  ">
+      <div className="px-4 py-2 flex flex-col gap-5 ">
         <h2 className="text-lg   font-bold text-gray-800">{title}</h2>
         <div className="flex justify-between">
           <p className="text-gray-600 fWeight">Current bid:</p>
