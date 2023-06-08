@@ -39,8 +39,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <CartPage />
-            <Footer/>
-
+            <Footer />
           </>
         }
       />
@@ -53,8 +52,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <Address />
-            <Footer/>
-
+            <Footer />
           </>
         }
       />
@@ -64,8 +62,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <PaymentMethod />
-            <Footer/>
-             
+            <Footer />
           </>
         }
       />
@@ -76,7 +73,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <PlaceOrder />
-            <Footer/>
+            <Footer />
           </>
         }
       />
@@ -89,7 +86,7 @@ const AppRoutes = () => {
             <ProtectedRoute>
               <OrderPage />
             </ProtectedRoute>
-            <Footer/>
+            <Footer />
           </>
         }
       />
@@ -102,7 +99,7 @@ const AppRoutes = () => {
             <ProtectedRoute>
               <OrderHistory />
             </ProtectedRoute>
-            <Footer/>
+            <Footer />
           </>
         }
       />
@@ -115,7 +112,7 @@ const AppRoutes = () => {
             <ProtectedRoute>
               <ProfilePage />
             </ProtectedRoute>
-            <Footer/>
+            <Footer />
           </>
         }
       />
@@ -130,7 +127,7 @@ const AppRoutes = () => {
             <AdminRoute>
               <UserListPage />
             </AdminRoute>
-            <Footer/>
+            <Footer />
           </>
         }
       />
@@ -143,7 +140,7 @@ const AppRoutes = () => {
             <AdminRoute>
               <UserEditPage />
             </AdminRoute>
-            <Footer/>
+            <Footer />
           </>
         }
       />
@@ -154,7 +151,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <AuctionPage />
-            <Footer/>
+            <Footer />
           </>
         }
       />
@@ -165,7 +162,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <CreateAuction />
-            <Footer/>
+            <Footer />
           </>
         }
       />
@@ -176,7 +173,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <AuctionDetail />
-            <Footer/>
+            <Footer />
           </>
         }
       />

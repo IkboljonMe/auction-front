@@ -1,5 +1,5 @@
 .home__component {
-  background-color: #000;
+  background-color: #1a1a1a;
   padding-top: 100px;
   background-image: url("../assets/Hexagon.svg");
   background-repeat: repeat;
@@ -17,4 +17,17 @@ img {
   object-fit: fill;
   border-radius: 20px;
   box-shadow: #000;
+}
+.bgCoral {
+  font-size: 22px;
+  border: 1px solid red;
+  border-radius: 12px;
+  padding: 5px 18px;
+  color: white;
+
+  /* background-color: rgb(243, 88, 31); */
+}
+.bgCoral:hover {
+  border: 2px solid rgb(243, 88, 31);
+  font-weight: 700;
 }

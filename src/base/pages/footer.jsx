@@ -1,63 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {BiChevronRightCircle} from 'react-icons/bi'
-import "../styles/footer.css";
+import { BiChevronRightCircle } from "react-icons/bi";
+
+const students = [
+  {
+    name: "Yavuz Selim Bulut",
+    id: 42301,
+    mobile: "No mobile",
+  },
+  {
+    name: "Berke Tufan",
+    id: 42340,
+    mobile: "No mobile",
+  },
+  {
+    name: "Tarik Aktas",
+    id: 42240,
+    mobile: "No mobile",
+  },
+];
 
 export default function Footer() {
   return (
-   <div className="footer-link">
-    <div className="footer">
-      <div className="footer-links">
-        <h1>Shipping</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-          mollitia eius, similique at consequuntur quia incidunt voluptatum
-          facere inventore quae.
-        </p>
+    <div className="bg-yellow-200">
+      <div className="lg:container w-full mx-auto p-4 flex gap-5 lg:flex-row flex-col items-center">
+        <div className="lg:w-1/2">
+          <h1 className="text-xl font-bold">About Project</h1>
+          <p>
+            Students from the University of Economics and Human Sciences has
+            created an app known as AuctionHUB, where users can participate in
+            bidding with others. To access all the app's functionalities, please
+            seek permission from the administrator.
+          </p>
+        </div>
+        <div className="lg:w-1/2 bg-inherit w-full">
+          <h1 className="text-xl font-bold">Contact</h1>
+          <ul className="bg-inherit">
+            {students.map((student) => (
+              <li className="w-full flex  justify-between">
+                <div className="flex ">
+                  <p>
+                    {student.name} ID:{student.id}
+                  </p>
+                </div>
+
+                <p>{student.mobile}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="footer-links">
-        <h1>Auction</h1>
-        <ul>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="footer-links">
-        <h1>Footer</h1>
-        <ul>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-          <li>
-            <Link to={'/'}><BiChevronRightCircle className="right"/>Auction</Link>
-          </li>
-        </ul>
-      </div>
-      
     </div>
-     
-   </div>
   );
 }

@@ -8,6 +8,7 @@ import auction1 from "../assets/auction1.jpeg";
 import auction2 from "../assets/auction2.jpeg";
 import auction3 from "../assets/auction3.jpeg";
 import "swiper/css";
+import Footer from "./footer";
 
 SwiperCore.use([Autoplay]);
 
@@ -21,49 +22,57 @@ function Home() {
   };
 
   return (
-    <div className="home__component home flex flex-col h-screen justify-evenly">
-      <Helmet>
-        <title>AuctionHUB</title>
-      </Helmet>
-
-      <p className="text-white text-4xl  pb-6 flex justify-center">
-        Welcom to
-        <span className="ml-3 text-4xl font-bold">
-          Auction
-          <span style={{ color: "#ffA000", fontWeight: "900" }}>HUB</span>
-        </span>
-      </p>
-      <div>
-        <Swiper
-          ref={swiperRef}
-          spaceBetween={50}
-          slidesPerView={1}
-          autoplay={{
-            delay: 1000,
-            reverseDirection: true,
-          }}
-          loop
-          onReachEnd={handleSwiperReachEnd}
-        >
-          <SwiperSlide className="flex justify-center">
-            <img src={auction1} alt="1"   />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-center">
-            <img src={auction2} alt="2" />
-          </SwiperSlide>
-          <SwiperSlide className="flex justify-center">
-            <img src={auction3} alt="3" />
-          </SwiperSlide>
-        </Swiper>
+    <>
+      <div className="home__component home flex flex-col h-screen justify-between">
+        <Helmet>
+          <title>AuctionHUB</title>
+        </Helmet>
+        <p className="text-white text-4xl  pb-6 flex justify-center">
+          Welcom to
+          <span className="ml-3 text-4xl font-bold">
+            Auction
+            <span style={{ color: "#ffA000", fontWeight: "900" }}>HUB</span>
+          </span>
+        </p>
+        <div className="">
+          <Swiper
+            ref={swiperRef}
+            spaceBetween={50}
+            slidesPerView={1}
+            autoplay={{
+              delay: 1000,
+              reverseDirection: true,
+            }}
+            loop
+            onReachEnd={handleSwiperReachEnd}
+          >
+            <SwiperSlide className="flex flex-row ">
+              <div className="w-full flex justify-center">
+                <img className="" src={auction1} alt="1" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="flex flex-row ">
+              <div className="w-full flex justify-center">
+                <img className="" src={auction2} alt="2" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="flex flex-row ">
+              <div className="w-full flex justify-center">
+                <img className="" src={auction3} alt="3" />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div className="flex justify-center ">
+          <Link to="/auction">
+            <button type="submit" className="bgCoral">
+              <span className="text-white">Join Auction</span>
+            </button>
+          </Link>
+        </div>
+        <Footer />
       </div>
-      <div className="flex justify-center ">
-        <Link to="/auction">
-          <button type="submit" className="bgCoral">
-            Join Auction
-          </button>
-        </Link>
-      </div>
-    </div>
+    </>
   );
 }
 
