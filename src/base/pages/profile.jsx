@@ -1,7 +1,7 @@
 import React, { useContext, useReducer, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Store } from "../Store";
-import { getError } from "../utils";
+import { Store } from "../context/Store";
+import { getError } from "../helpers/utils";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useParams } from "react-router-dom";

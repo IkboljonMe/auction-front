@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Loading from "../components/loading";
 import { toast } from "react-toastify";
-import { getError } from "../utils";
-import { Store } from "../Store";
+import { getError } from "../helpers/utils";
+import { Store } from "../context/Store";
 import "../styles/placeOrder.css";
 
 const reducer = (state, action) => {

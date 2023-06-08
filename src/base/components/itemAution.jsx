@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import { Tilt } from "react-tilt";
 import "../styles/itemAuction.css";
 function AuctionItem(props) {

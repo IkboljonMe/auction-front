@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import CheckoutSteps from "../components/checkoutSteps";
 import { Helmet } from "react-helmet-async";
 import "../styles/payMethod.css";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import { useNavigate } from "react-router";
 
 function PaymentCard({ id, value, logo, label, selected, onClick }) {

@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import axios from "axios";
-import { Store } from "../Store";
-import { getError } from "../utils";
+import { Store } from "../context/Store";
+import { getError } from "../helpers/utils";
 import LoadingDots from "../../components/LoadingDots/LoadingDots";
 
 const reducer = (state, action) => {

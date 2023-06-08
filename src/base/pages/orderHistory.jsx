@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import { Helmet } from "react-helmet-async";
 import Loading from "../components/loading";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { getError } from "../utils";
+import { getError } from "../helpers/utils";
 
 const reducer = (state, action) => {
   switch (action.type) {

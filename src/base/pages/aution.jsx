@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import AuctionItem from "../components/itemAution";
 import Loading from "../components/loading";
 import ErrorPage from "../components/errorPage";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";

@@ -1,10 +1,10 @@
 import React, { useContext, useReducer, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
-import { getError } from "../utils";
+import { getError } from "../helpers/utils";
 import LoadingDots from "../components/dotsLoading";
 import ErrorPage from "../components/errorPage";
 

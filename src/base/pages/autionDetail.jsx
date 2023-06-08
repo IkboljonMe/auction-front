@@ -5,7 +5,7 @@ import axios from "axios";
 import io from "socket.io-client";
 import ErrorPage from "../components/errorPage";
 import Loading from "../components/loading";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import "../styles/auctionItems.css";
 import { Tilt } from "react-tilt";
 

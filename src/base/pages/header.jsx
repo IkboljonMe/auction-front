@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import "../styles/header.css";
 import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
 

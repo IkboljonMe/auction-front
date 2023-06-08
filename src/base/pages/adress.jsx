@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import CheckoutSteps from "../components/checkoutSteps";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import "../styles/adress.css";
 
 export default function Address() {

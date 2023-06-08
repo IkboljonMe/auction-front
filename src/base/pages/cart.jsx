@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import "../styles/cart.css";
 
 export default function CartPage() {

@@ -4,11 +4,11 @@ import { Helmet } from "react-helmet-async";
 import Hn from "../assets/hn.png";
 import avatar from "../assets/avatar.svg";
 import axios from "axios";
-import { Store } from "../Store";
+import { Store } from "../context/Store";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getError } from "../utils";
+import { getError } from "../helpers/utils";
 import "../styles/auth.css";
 function Register() {
   const navigate = useNavigate();
