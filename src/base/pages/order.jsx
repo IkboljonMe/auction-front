@@ -279,8 +279,7 @@ export default function OrderPage() {
                       Tax
                     </p>
                     <p className="text-base light:text-gray-300 leading-4 text-gray-600">
-                      <small>$</small>
-                      {order.taxPrice.toFixed(2)}
+                      <small>$</small>0
                     </p>
                   </div>
                   <div className="flex justify-between items-center w-full">

@@ -34,13 +34,17 @@ export default function PlaceOrder() {
 
   const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100;
   cart.itemsPrice = round2(
-    cart.cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)
+    cart.cartItems.reduce(
+      (acc, item) => acc + item.quantity * item.currentBid,
+      0
+    )
   );
 
   cart.shippingPrice = cart.itemsPrice > 10000 ? round2(0) : round2(500);
 
-  cart.taxPrice = round2(0.15 * cart.itemsPrice);
-  cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
+  cart.taxPrice = 0;
+  console.log("Cart_____", cart);
+  cart.totalPrice = cart.itemsPrice + cart.taxPrice;
 
   const placeOrderHandler = async () => {
     try {
@@ -213,7 +217,7 @@ export default function PlaceOrder() {
                 </div>
                 <p className="text-gray-700 ml-auto">
                   Total: <small>$</small>
-                  {(item.quantity * item.price).toLocaleString("en-IN")}
+                  {(item.quantity * item.currentBid).toLocaleString("en-IN")}
                 </p>
               </div>
               <Link
