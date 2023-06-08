@@ -7,6 +7,7 @@ import ErrorPage from "../components/errorPage";
 import Loading from "../components/loading";
 import { Store } from "../context/Store";
 import "../styles/auctionItems.css";
+import Footer from "./footer";
 
 const initialState = {
   products: [],
@@ -103,35 +104,35 @@ const AuctionDetail = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "indigo" }}>
+    <div className="auction__background h-screen flex flex-col gap-5">
       {loading ? (
         <Loading />
       ) : error ? (
         <ErrorPage />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-10">
+        <div className="pt-10 grid grid-cols-1 md:grid-cols-1 gap-10">
           {/* Product details */}
           <div className="bg-white mAutoLR rounded-lg shadow-lg marPad">
-            <div className="GridImg">
-              <div className="w75">
-                <h2 className="text-2xl font-bold mb-2">{auction.title}</h2>
-                <p className="mb-4">{auction.description}</p>
-
-                <TimeLeft endDate={auction.endDate} />
-              </div>
+            <div className="grid lg:grid-cols-2 grid-rows-1 h-auto">
               <div className="w-full p-4">
                 <img
                   src={auction.imageUrl}
                   alt={auction.title}
                   className="rounded-lg shadow-lg imgWidth"
                 />
+                <TimeLeft endDate={auction.endDate} />
+              </div>
+              <div className="h-auto">
+                <h2 className="text-2xl font-bold mb-2 flex justify-center">
+                  {auction.title}
+                </h2>
+                <p className="mb-4 flex justify-center">
+                  {auction.description}
+                </p>
               </div>
             </div>
 
-            {/* Time left for auction */}
-
-            {/* Current bid */}
-            <div className="border-b border-gray-200 py-2 flex justify-between items-center mb-4">
+            <div className="border-b border-orange-400 py-2 flex justify-between items-center mb-4">
               <p className="text-gray-500 text-sm">Starting Bid:</p>
               <p className="text-lg font-semibold">
                 ${auction.startingBid.toLocaleString("en-IN")}
@@ -142,7 +143,7 @@ const AuctionDetail = () => {
               </p>
             </div>
             {auction.bids.length > 0 && (
-              <div className="border-b border-gray-200 py-2">
+              <div className="border-b border-orange-400 py-2">
                 <div className="flex justify-between mb-2">
                   <p className="text-gray-500 text-sm">Highest Bidder</p>
                   <p className="text-lg font-semibold">
@@ -151,16 +152,14 @@ const AuctionDetail = () => {
                 </div>
               </div>
             )}
-
-            {/* New bid input field and submit button */}
             {new Date(auction.endDate).getTime() <= Date.now() ? (
               <>
                 {auction.bids.length > 0 && (
-                  <div className="border-b border-gray-200 py-2">
+                  <div className="border-b border-orange-400 py-2">
                     <p className="text-lg font-semibold w-full mLeft">
                       {auction.bids[auction.bids.length - 1].bidder ===
                       userInfo.name ? (
-                        <button className="w25 py-2 px-4 text-white rounded-md hover:scale-105 bgCoral">
+                        <button className="py-2 px-4  rounded-md hover:scale-105 text-orange-500 border-2 w-full hover:bg-orange-500 hover:text-white border-orange-500">
                           ADD TO CART
                         </button>
                       ) : (
@@ -184,21 +183,21 @@ const AuctionDetail = () => {
                 onSubmit={(e) => handleSubmit(e, userInfo.name)}
                 className="flex items-center"
               >
-                <div className="relative flex-grow mr-4">
+                <div className="relative flex-grow mr-4 pt-4">
+                  {/* <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                    <span className="text-gray-500 sm:text-lg">$</span>
+                  </div> */}
                   <input
                     type="number"
-                    className="block w-full pr-10 sm:text-sm border-gray-300 rounded-md py-2 px-3 leading-5 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    className="block  w-full pr-10 sm:text-sm border-orange-500 text-orange-500 placeholder:text-orange-500 rounded-md py-2 px-3 leading-5 focus:outline-none focus:border-orange-700"
                     placeholder="Enter your bid"
                     value={bid}
                     onChange={handleBidChange}
                   />
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                    <span className="text-gray-500 sm:text-lg">$</span>
-                  </div>
                 </div>
                 <button
                   type="submit"
-                  className="inline-block px-6 py-2 leading-5 font-semibold rounded-lg text-white bg-cyan-500 hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="inline-block px-6 mt-4 py-2 leading-5 font-semibold rounded-lg border-2 hover:bg-orange-500 hover:text-white  border-orange-500 text-orange-500  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
                   Submit Bid
                 </button>
@@ -211,7 +210,7 @@ const AuctionDetail = () => {
               </Link>
             )}
             {auction.bids.length > 0 && (
-              <div className="border-b border-gray-200 py-2 mt-4">
+              <div className="border-b border-orange-400 py-2 mt-4">
                 <h3 className="text-lg font-bold mb-2">Bids History:</h3>
                 {auction.bids.map((bid, index) => (
                   <div key={index} className="flex justify-between mb-2">
@@ -224,9 +223,9 @@ const AuctionDetail = () => {
               </div>
             )}
           </div>
-          {/* Image of product */}
         </div>
       )}
+      <Footer />
     </div>
   );
 };
@@ -251,9 +250,8 @@ function TimeLeft({ endDate }) {
   }, [endDate]);
 
   return (
-    <div className="border-t border-b border-gray-200 py-2 items-center mb-4">
-      <p className="text-gray-500 text-sm">Time Left:</p>
-      <div className="w-full p-4 mt-3 bg-white rounded-lg shadow-xl">
+    <div className=" py-2 flex justify-center items-center mb-4">
+      <div className="w-3/4  p-4 mt-3 bg-white rounded-lg ">
         <div className="grid grid-cols-4 gap-4">
           <div className="text-center">
             <div className="text-lg font-semibold">{timeLeft.days}</div>

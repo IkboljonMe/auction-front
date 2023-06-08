@@ -157,7 +157,6 @@ const AppRoutes = () => {
           <>
             <Header />
             <CreateAuction />
-            <Footer />
           </>
         }
       />
@@ -168,7 +167,6 @@ const AppRoutes = () => {
           <>
             <Header />
             <AuctionDetail />
-            <Footer />
           </>
         }
       />
