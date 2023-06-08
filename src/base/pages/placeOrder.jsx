@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import { getError } from "../helpers/utils";
 import { Store } from "../context/Store";
 import "../styles/placeOrder.css";
+import Footer from "./footer";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -82,32 +83,33 @@ export default function PlaceOrder() {
     }
   }, [cart, navigate]);
   return (
-    <div className="area h-screen">
+    <div className="global__background h-screen">
       <Helmet>
         <title>Place Order-AuctionHUB</title>
       </Helmet>
       <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row h-5/6">
         {/* Preview Order */}
-        <div className="flex flex-col w-full">
-          <h1 className="text-2xl font-semibold text-white items-center justify-center flex text-blue-700 mb-4">
+        <div className="flex flex-col justify-evenly w-full">
+          <h1 className="text-2xl font-semibold text-white items-center justify-center flex  mb-4">
             Last Preview Order
           </h1>
-
           <div className="grid grid-cols-3">
             {/* Shipping Card */}
-            <div className="bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
-              <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
-                Shipping
-              </h2>
-              <p className="text-gray-700 mb-2 flex justify-between">
-                <strong>Name: </strong>
-                {cart.shippingAddress.fullName}{" "}
-              </p>
-              <p className="text-gray-700 mb-4 flex justify-between">
-                <strong>Address: </strong> {cart.shippingAddress.address},
-                {cart.shippingAddress.city}, {cart.shippingAddress.pinCode},{" "}
-                {cart.shippingAddress.country}
-              </p>
+            <div className="flex flex-col justify-between border-orange-600 border-2 hover:border-5 hover:scale-110  bg-white border-orange-600 border-2  rounded-lg shadow-md p-4 mb-4 mx-4">
+              <div>
+                <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
+                  Shipping
+                </h2>
+                <p className="text-gray-700 mb-2 flex justify-between">
+                  <strong>Name: </strong>
+                  {cart.shippingAddress.fullName}{" "}
+                </p>
+                <p className="text-gray-700 mb-4 flex justify-between">
+                  <strong>Address: </strong> {cart.shippingAddress.address},
+                  {cart.shippingAddress.city}, {cart.shippingAddress.pinCode},{" "}
+                  {cart.shippingAddress.country}
+                </p>
+              </div>
               <Link
                 to="/shipping"
                 className="text-cyan-500 hover:text-cyan-600 flex justify-center"
@@ -117,14 +119,16 @@ export default function PlaceOrder() {
             </div>
 
             {/* Payment Card */}
-            <div className="bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
-              <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
-                Payment
-              </h2>
-              <p className="text-gray-700 mb-2 flex justify-between">
-                <strong>Method: </strong>
-                {cart.paymentMethod}
-              </p>
+            <div className="flex flex-col justify-between border-orange-600 border-2 hover:border-5 hover:scale-110  hover:border-orange-800 bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
+              <div>
+                <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
+                  Payment
+                </h2>
+                <p className="text-gray-700 mb-2 flex justify-between">
+                  <strong>Method: </strong>
+                  {cart.paymentMethod}
+                </p>
+              </div>
               <a
                 flex
                 justify-between
@@ -136,7 +140,7 @@ export default function PlaceOrder() {
             </div>
 
             {/* Order Summary Card */}
-            <div className="bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
+            <div className=" flex flex-col justify-between border-orange-600 border-2 hover:border-5 hover:scale-110 bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
               <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
                 Order Summary
               </h2>
@@ -169,20 +173,24 @@ export default function PlaceOrder() {
                     {cart.totalPrice.toFixed(2).toLocaleString("en-IN")}
                   </p>
                 </div>
-                <button
-                  className="borderCoral text-black px-4 py-2 rounded mt-4"
-                  onClick={placeOrderHandler}
-                  disabled={cart.cartItems.length === 0}
-                >
-                  Order now with AuctionHUB
-                </button>
+
                 {loading && <Loading />}
               </div>
             </div>
           </div>
+          <button
+            className=" border-orange-500 border-2 hover:bg-orange-500 hover:scale-105 text-white px-4 py-2 rounded mt-4"
+            onClick={placeOrderHandler}
+            disabled={cart.cartItems.length === 0}
+          >
+            Order now with AuctionHUB
+          </button>
         </div>
       </div>
       <CheckoutSteps step1 step2 step3 step4 />
+      <div className="pt-6">
+        <Footer />
+      </div>
     </div>
   );
 }

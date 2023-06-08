@@ -70,7 +70,6 @@ const AppRoutes = () => {
           <>
             <Header />
             <PlaceOrder />
-            <Footer />
           </>
         }
       />
