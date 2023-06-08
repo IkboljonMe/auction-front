@@ -45,10 +45,6 @@ export default function Header() {
     setIsOpen(!isOpen);
   }
 
-  function toggleDropdownAdmin() {
-    setIsOpenAdmin(!isOpenAdmin);
-  }
-
   function signoutHandler() {
     ctxDispatch({ type: "USER_SIGNOUT" });
     localStorage.removeItem("userInfo");
@@ -66,41 +62,26 @@ export default function Header() {
   return (
     <>
       <ToastContainer position="bottom-center" limit={1} />
-      <header className="shadow-lg p_fixed bgBisque">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col  md:flex-row items-center">
+      <header className="w-full shadow-lg p_fixed bgBisque ">
+        <div className=" container m-auto w-full justify-between flex  p-5 flex-col  md:flex-row items-center">
           <Link
             to="/"
             className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 mb-0 md:mb-0"
           >
             <span className="ml-3 text-3xl font-bold">
-              <span className="text-base-500">Auction</span>HUB
+              Auction
+              <span style={{ color: "#ffA000", fontWeight: "900" }}>HUB</span>
             </span>
           </Link>
 
-          <nav className="flex lg:w-2/5 flex-wrap lg:justify-end items-center text-base md:ml-auto">
-            <Link to="/auction" className="relative inline-flex items-center">
-              <span className="relative inline-flex items-center rounded px-2.5 py-1.5 font-medium">
-                <span className="text-gray-600 text-lg hover:text-gray-900">
-                  Auction
-                </span>
-              </span>
-            </Link>
+          <Link
+            to="/auction"
+            className="text-3xl title-font font-medium  text-gray-900"
+          >
+            Go to Auction
+          </Link>
 
-            <Link to="/cart" className="relative inline-flex items-center mr-6">
-              <span className="relative inline-flex items-center rounded px-2.5 py-1.5 font-medium">
-                {cart.cartItems.length > 0 && (
-                  <span className="absolute -top-1 -right-2 h-5 w-5 rounded-full bg-red-500 flex justify-center text-white text-xs items-center">
-                    <span>
-                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-                    </span>
-                  </span>
-                )}
-                <span className="ml-1.5 text-base text-gray-600 hover:text-gray-900">
-                  <FaShoppingCart size={23} />
-                </span>
-              </span>
-            </Link>
-
+          <nav className="flex  flex-wrap  items-center text-base ">
             {userInfo && userInfo.isSeller && (
               <div className="mr-4">
                 {isMenuOpen && (
@@ -122,42 +103,25 @@ export default function Header() {
               </div>
             )}
 
-            {userInfo && userInfo.isAdmin && (
-              <div className="hover:text-gray-900 mr-6">
-                <button
-                  id="dropdownUserAvatarButton"
-                  data-dropdown-toggle="dropdownAvatar"
-                  className="flex items-center mr-2 hover:text-gray-900 focus:outline-none cursor-pointer"
-                  onClick={toggleDropdownAdmin}
-                >
-                  Admin &nbsp;
-                  <i className="fas fa-angle-down"></i>
-                </button>
-                {isOpenAdmin && (
-                  <div
-                    id="dropdownAvatar"
-                    className="absolute bgBisque borderDark z-10 divide-y rounded-lg shadow-lg right-0 mt-2 sm:left-auto"
-                  >
-                    <div className="px-4 wMd py-3 text-lg text-black mt-1">
-                      <span className="fs-1 text-black fWeight">
-                        {userInfo.name}
-                      </span>
-                      <div className="font-medium ">{userInfo.email}</div>
-                    </div>
-
-                    <div className="py-2">
-                      <Link
-                        to="/admin/users"
-                        className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 hover:text-black"
-                      >
-                        Manage Users
-                      </Link>
-                    </div>
-                  </div>
+            <div className="hover:text-gray-900 mr-6">
+              <button className="flex items-center mr-2 hover:text-gray-900 focus:outline-none cursor-pointer">
+                {userInfo.isAdmin ? "You are Admin" : "You are not admin!"}
+              </button>
+            </div>
+            <Link to="/cart" className="relative inline-flex items-center mr-6">
+              <span className="relative inline-flex items-center rounded px-2.5 py-1.5 font-medium">
+                {cart.cartItems.length > 0 && (
+                  <span className="absolute -top-1 -right-2 h-5 w-5 rounded-full bg-red-500 flex justify-center text-white text-xs items-center">
+                    <span>
+                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                    </span>
+                  </span>
                 )}
-              </div>
-            )}
-
+                <span className="ml-1.5 text-base text-gray-600 hover:text-gray-900">
+                  <FaShoppingCart size={23} />
+                </span>
+              </span>
+            </Link>
             {userInfo ? (
               <div className="relative group">
                 <button

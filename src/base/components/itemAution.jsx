@@ -55,37 +55,34 @@ function AuctionItem(props) {
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden" key={id}>
       <Helmet>
-        <title>Auction House-AuctionHUB</title>
+        <title>AuctionHUB</title>
       </Helmet>
       <div className="relative">
-        <Tilt
-          options={{
-            max: 17,
-            transition: 0.5,
-            scale: 1,
-            speed: 650,
-          }}
-        >
-          <img
-            src={imageUrl}
-            alt="ItemImage"
-            className="w-full h-48 object-contain hover:scale-105 duration-500"
-          />
-        </Tilt>
+        <img
+          src={imageUrl}
+          alt="ItemImage"
+          className=" pt-2 w-full h-48 object-contain hover:scale-105 duration-500"
+        />
+
         {userInfo && userInfo.isAdmin && (
           <button className="absolute top-0 right-0" onClick={handleDelete}>
             <i className="fas fa-trash-alt text-gray-200 bg-transparent hover:text-gray-500 hover:bg-gray-200 duration-200 px-2 py-2"></i>
           </button>
         )}
       </div>
-      <div className="px-4 py-2">
-        <h2 className="text-lg font-bold text-gray-800">{title}</h2>
-        <p className="text-gray-600 fWeight">
-          Now Bid: ${currentBid.toLocaleString("en-IN")}
-        </p>
-        <p className="text-gray-600">
-          Time finish: <span className="font-bold">{timeLeft}</span>
-        </p>
+      <div className="px-4 py-2 flex flex-col  ">
+        <h2 className="text-lg   font-bold text-gray-800">{title}</h2>
+        <div className="flex justify-between">
+          <p className="text-gray-600 fWeight">Current bid:</p>
+          <p className="text-gray-600 fWeight">
+            ${currentBid.toLocaleString("en-IN")}
+          </p>
+        </div>
+        <div className="flex justify-between">
+          <p className="text-gray-600">Time left:</p>
+          <span className="font-bold">{timeLeft}</span>
+        </div>
+
         {auctionEnded ? (
           <>
             {userInfo && highestBidder === userInfo.name ? (
@@ -94,7 +91,7 @@ function AuctionItem(props) {
                   onClick={() => addToCartHandler(props)}
                   className="w-full py-2 px-4 bgColar hover:scale-105 text-white duration-200 rounded-md mt-4"
                 >
-                  You Win!
+                  You Win🎉
                 </button>
               </Link>
             ) : (
@@ -102,14 +99,14 @@ function AuctionItem(props) {
                 className="w-full py-2 px-4 cursor-not-allowed bg-gray-100 text-gray-400 duration-200 rounded-md mt-4"
                 disabled
               >
-                Auction Ended
+                Sorry, Auction has Ended🚫
               </button>
             )}
           </>
         ) : (
           <Link to={userInfo ? `/auctions/${id}` : "/signin"}>
             <button className="w-full py-2 px-4 bg-gray-300 text-gray-600 duration-200 rounded-md mt-4 hover:bg-gray-400">
-              Bid Now
+              Bid with other now 💵
             </button>
           </Link>
         )}

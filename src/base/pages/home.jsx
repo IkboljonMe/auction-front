@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/home.css";
 import { Helmet } from "react-helmet-async";
-
 import { Link } from "react-router-dom";
 
 function Home() {

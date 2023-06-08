@@ -72,19 +72,10 @@ function AuctionPage() {
       }
     }
   };
-  const [color, setColor] = useState(false);
 
-  const changeColor = () => {
-    if (window.scrollY >= 100) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
-  };
-  window.addEventListener("scroll", changeColor);
   return (
     <div className="bgIndigo height100vh">
-      <header
+      {/* <header
         className={
           color ? "py-2 shadow-sm fixedTop" : "py-4 my-1 bgWhite shadow-sm"
         }
@@ -112,21 +103,21 @@ function AuctionPage() {
               Live Auction
             </h1>
           </div>
-          <div className="flex justify-end">
-            {userInfo && userInfo.isSeller ? (
-              <Link
-                to="/create-auction"
-                className="bgColar flex alignICenter hover:bg-gray-200 hover:text-cyan-600 duration-200 sm:mr-2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                <GrAdd size={20} className="mr-2" /> Auction
-              </Link>
-            ) : (
-              <></>
-            )}
-          </div>
+     
         </div>
-      </header>
-
+      </header> */}
+      <div className="flex justify-center pt-4">
+        {userInfo && userInfo.isSeller ? (
+          <Link
+            to="/create-auction"
+            className="bgColar flex alignICenter hover:bg-gray-200 hover:text-cyan-600 duration-200 sm:mr-2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            <GrAdd size={20} className="mr-2" /> Click here to add Auction
+          </Link>
+        ) : (
+          <></>
+        )}
+      </div>
       <main className="container mx-auto py-8">
         {loading ? (
           <Loading />
@@ -143,7 +134,6 @@ function AuctionPage() {
                   speed: 1500,
                 }}
               >
-                {" "}
                 <div
                   className="border-b border-gray-200 py-2 widthLg"
                   key={product._id}
