@@ -6,6 +6,8 @@ import io from "socket.io-client";
 import ErrorPage from "../../components/error/errorPage";
 import Loading from "../../components/loading/loading";
 import { Store } from "../../Store";
+import "./auctionItems.css";
+import { Tilt } from "react-tilt";
 
 const initialState = {
   products: [],
@@ -102,31 +104,41 @@ const AuctionDetail = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "indigo" }}>
       {loading ? (
         <Loading />
       ) : error ? (
         <ErrorPage />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Image of product */}
-          <div className="w-full p-4">
-            <img
-              src={auction.imageUrl}
-              alt={auction.title}
-              className=" w-full max-w-2xl rounded-lg shadow-lg object-contain"
-            />
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-10">
           {/* Product details */}
-          <div className="w-full p-4 mt-3 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold mb-2">{auction.title}</h2>
-            <p className="text-gray-500 text-base mb-4">
-              {auction.description}
-            </p>
+          <div className="bg-white mAutoLR rounded-lg shadow-lg marPad">
+            <div className="GridImg">
+              <div className="w75">
+                <h2 className="text-2xl font-bold mb-2">{auction.title}</h2>
+                <p className="mb-4">{auction.description}</p>
+
+                <TimeLeft endDate={auction.endDate} />
+              </div>
+              <div className="w-full p-4">
+                <Tilt
+                  options={{
+                    max: 6,
+                    transition: 0.5,
+                    scale: 1,
+                    speed: 300,
+                  }}
+                >
+                  <img
+                    src={auction.imageUrl}
+                    alt={auction.title}
+                    className="rounded-lg shadow-lg imgWidth"
+                  />
+                </Tilt>
+              </div>
+            </div>
 
             {/* Time left for auction */}
-            <TimeLeft endDate={auction.endDate} />
 
             {/* Current bid */}
             <div className="border-b border-gray-200 py-2 flex justify-between items-center mb-4">
@@ -155,10 +167,10 @@ const AuctionDetail = () => {
               <>
                 {auction.bids.length > 0 && (
                   <div className="border-b border-gray-200 py-2">
-                    <p className="text-lg font-semibold">
+                    <p className="text-lg font-semibold w-full mLeft">
                       {auction.bids[auction.bids.length - 1].bidder ===
                       userInfo.name ? (
-                        <button className="w-full py-2 px-4 bg-green-500 hover:bg-green-600 text-white duration-200 rounded-md mt-4">
+                        <button className="w25 py-2 px-4 text-white rounded-md hover:scale-105 bgCoral">
                           ADD TO CART
                         </button>
                       ) : (
@@ -222,6 +234,7 @@ const AuctionDetail = () => {
               </div>
             )}
           </div>
+          {/* Image of product */}
         </div>
       )}
     </div>

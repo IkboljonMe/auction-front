@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { Store } from "../../Store";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import {Tilt} from 'react-tilt'
+import './itemAuction.css'
 function AuctionItem(props) {
   const {
     id,
@@ -59,11 +60,20 @@ function AuctionItem(props) {
         <title>Auction House-AEHBidding</title>
       </Helmet>
       <div className="relative">
-        <img
+       <Tilt
+        options={{
+          max: 17,
+          transition: 0.5,
+          scale: 1,
+          speed: 650,
+        }}
+       >
+       <img
           src={imageUrl}
           alt="ItemImage"
           className="w-full h-48 object-contain hover:scale-105 duration-500"
         />
+       </Tilt>
         {userInfo && userInfo.isAdmin && (
           <button className="absolute top-0 right-0" onClick={handleDelete}>
             <i className="fas fa-trash-alt text-gray-200 bg-transparent hover:text-gray-500 hover:bg-gray-200 duration-200 px-2 py-2"></i>
@@ -72,11 +82,11 @@ function AuctionItem(props) {
       </div>
       <div className="px-4 py-2">
         <h2 className="text-lg font-bold text-gray-800">{title}</h2>
-        <p className="text-gray-600">
-          Current Bid: ${currentBid.toLocaleString("en-IN")}
+        <p className="text-gray-600 fWeight">
+          Now Bid: ${currentBid.toLocaleString("en-IN")}
         </p>
         <p className="text-gray-600">
-          Time Left: <span className="font-bold">{timeLeft}</span>
+          Time finish: <span className="font-bold">{timeLeft}</span>
         </p>
         {auctionEnded ? (
           <>
@@ -84,7 +94,7 @@ function AuctionItem(props) {
               <Link to={`/auctions/${id}`}>
                 <button
                   onClick={() => addToCartHandler(props)}
-                  className="w-full py-2 px-4 bg-green-500 hover:bg-green-600 text-white duration-200 rounded-md mt-4"
+                  className="w-full py-2 px-4 bgColar hover:scale-105 text-white duration-200 rounded-md mt-4"
                 >
                   You Win!
                 </button>

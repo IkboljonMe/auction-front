@@ -13,19 +13,22 @@ function Home() {
         </Helmet>
       </div>
       <div className="imagContainer">
-        <h1 class="hero-text">
+       <div className="titleButton">
+       <h1 class="hero-text h-6 text-white">
           Welcome to <span class="highlight">AEH</span>Bidding
         </h1>
-
-        <img
-          src="https://geauction.com/wp-content/uploads/2018/07/5-Auction-Tips-for-Beginners2.jpg"
-          alt="auction"
-        ></img>
         <Link to="/auction">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white hover:text-white duration-200 sm:mr-2 text-cyan-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform hover:scale-150">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white hover:text-white duration-200 sm:mr-2 text-cyan-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform hover:scale-10">
             Start bidding
           </button>
         </Link>
+
+       </div>
+        <img
+          src="https://avatars.mds.yandex.net/i?id=530fea3ff0b9f5093c65c12900cc8b283516c00b-9229932-images-thumbs&n=13"
+          alt="auction"
+        ></img>
+       
       </div>
     </div>
   );

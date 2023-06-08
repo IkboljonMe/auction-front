@@ -13,7 +13,6 @@ import PlaceOrder from "./base/pages/placeOrder/placeOrder";
 import OrderHistory from "./base/pages/orderHistory/orderHistory";
 import ProfilePage from "./base/pages/profile/profile";
 import ProtectedRoute from "./base/components/protectedRoute/protectedRoute";
-import Dashboard from "./base/pages/dashboard/dashboard";
 import AdminRoute from "./base/components/adminRoute/adminRoute";
 import UserListPage from "./base/pages/userList/userList";
 import UserEditPage from "./base/pages/editUser/editUser";
@@ -117,17 +116,7 @@ function App() {
         />
 
         {/* Admin Routes */}
-        <Route
-          path="/admin/dashboard"
-          element={
-            <>
-              <Header />
-              <AdminRoute>
-                <Dashboard />
-              </AdminRoute>
-            </>
-          }
-        />
+        
 
         <Route
           path="/admin/users"

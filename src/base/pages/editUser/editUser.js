@@ -8,7 +8,7 @@ import { getError } from "../../utils";
 import LoadingDots from "../../components/dotsLoading/dotsLoading";
 import Loading from "../../components/loading/loading";
 import ErrorPage from "../../components/error/errorPage";
-
+import './editUser.css'
 const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_REQUEST":
@@ -103,7 +103,7 @@ export default function UserEditPage() {
         //   component
         <div className="flex min-h-fit flex-col justify-center overflow-hidden bg-gray-100 py-6 sm:py-12">
           <div className="relative py-3 sm:mx-auto sm:max-w-xl">
-            <div className="animate-spin-custom absolute inset-0 -skew-y-6 transform bg-gradient-to-r from-cyan-300 to-cyan-500 shadow-lg sm:-rotate-6 sm:skew-y-0 sm:rounded-3xl"></div>
+            <div className="animate-spin-custom absolute inset-0 -skew-y-6 transform bg-gradient-to-r bgCoral shadow-lg sm:-rotate-6 sm:skew-y-0 sm:rounded-3xl"></div>
             <div className="relative bg-white px-4 py-10 shadow-lg sm:rounded-3xl sm:p-20">
               <div className="mx-auto max-w-md">
                 <div>
@@ -167,7 +167,7 @@ export default function UserEditPage() {
                           <div className="block bg-gray-300 cursor-pointer w-14 h-8 rounded-full"></div>
                           <div
                             className={`dot cursor-pointer absolute left-1 top-1.5 w-5 h-5 rounded-full transition transform ${
-                              isAdmin ? "translate-x-6 bg-cyan-500" : "bg-white"
+                              isAdmin ? "translate-x-6 bgCoral" : "bg-white"
                             }`}
                           ></div>
                         </div>
@@ -188,7 +188,7 @@ export default function UserEditPage() {
                           <div
                             className={`dot cursor-pointer absolute left-1 top-1.5 w-5 h-5 rounded-full transition transform ${
                               isSeller
-                                ? "translate-x-6 bg-cyan-500"
+                                ? "translate-x-6 bgCoral"
                                 : "bg-white"
                             }`}
                           ></div>

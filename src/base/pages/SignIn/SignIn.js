@@ -64,11 +64,7 @@ function LoginPage() {
         style={{ zIndex: '-1' }}
       />
       <div className="w-screen h-screen flex flex-col justify-center items-center lg:grid lg:grid-cols-2">
-        <img
-          src={unlock}
-          className="hidden lg:block w-1/2 hover:scale-150 transition-all duration-500 transform mx-auto"
-          alt="unlock"
-        />
+       <div></div>
         <form
           className="flex flex-col justify-center items-center w-1/2"
           onSubmit={submitHandler}

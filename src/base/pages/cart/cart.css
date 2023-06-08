@@ -24,3 +24,19 @@
 ::-webkit-scrollbar {
   height: 10px;
 }
+.heightLg{
+  width: 40%;
+  margin-bottom: 50px;
+  
+}
+.shoppingCart{
+  background-color: indigo;
+  height: 100vh;
+}
+.checoutCart{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}

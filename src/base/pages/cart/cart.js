@@ -29,15 +29,15 @@ export default function CartPage() {
   };
   console.log(cartItems);
   return (
-    <div>
+    <div className="shoppingCart">
       <Helmet>
         <title>Cart-AEHBidding</title>
       </Helmet>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="mb-8 text-3xl font-bold">Shopping Cart</h1>
+        <h1 className="mb-8 text-3xl text-white font-bold">Shopping Cart</h1>
       </main>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-        <div className="md:col-span-8">
+      <div className="checoutCart">
+        <div className="heightLg">
           {cartItems.length === 0 ? (
             <div className="p-4 border rounded-md bg-gray-100 text-gray-700">
               Cart is empty.{" "}
@@ -46,7 +46,7 @@ export default function CartPage() {
               </Link>
             </div>
           ) : (
-            <div className="bg-white border-b border-gray-200 shadow sm:rounded-lg hover:transform hover:scale-105 backface-hidden duration-500">
+            <div className="bg-white border-b border-gray-200 sm:rounded-lg hover:transform hover:scale-105 backface-hidden shadow-lg duration-500">
               <div className="overflow-x-auto max-w-full">
                 <table className="min-w-full divide-y divide-gray-200 ">
                   <thead className="bg-gray-50">
@@ -125,7 +125,7 @@ export default function CartPage() {
             </div>
           )}
         </div>
-        <div className="md:col-span-4 hover:transform hover:scale-105 duration-500 mx-2">
+        <div className="heightLg">
           <div className="bg-white shadow-lg sm:rounded-lg md:-mt-3">
             <div className="px-4 py-5 sm:p-6">
               <h2 className="mb-4 text-lg font-medium text-gray-900">

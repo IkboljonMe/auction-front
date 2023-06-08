@@ -6,7 +6,8 @@ import { Store } from "../../Store";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
-
+import {GrAdd} from 'react-icons/gr'
+import './auction.css'
 const initialState = {
   products: [],
   loading: true,
@@ -70,18 +71,28 @@ function AuctionPage() {
       }
     }
   };
+  const [color, setColor] = useState(false);
 
+  const changeColor = () => {
+      if (window.scrollY >= 100) {
+          setColor(true)
+      }
+      else {
+          setColor(false);
+      }
+  };
+  window.addEventListener("scroll", changeColor);
   return (
-    <div className="bg-gray-100">
-      <header className="bg-cyan-500 py-4 shadow-sm">
+    <div className="bgIndigo height100vh">
+      <header className={color ? 'py-2 shadow-sm fixedTop' : 'py-4 my-1 bgWhite shadow-sm'}>
         <div className="container mx-auto flex items-center">
           <div
-            className={`flex-grow flex justify-center ${
+            className={`flex-grow justify-center ${
               userInfo && userInfo.isSeller ? "ml-36" : " ml-auto"
             } `}
           >
-            <h1 className="text-3xl font-bold text-white mx-auto">
-              <i className="fas fa-hourglass-half text-2xl mr-2"></i>
+            <h1 className={color ? "text-3xl font-bold mx-auto textDark" : "text-3xl font-bold text-white mx-auto"}>
+              <i className={color ? "fas fa-hourglass-half text-2xl textDark mr-2" : "fas fa-hourglass-half text-2xl mr-2"}></i>
               Live Auction
             </h1>
           </div>
@@ -89,9 +100,9 @@ function AuctionPage() {
             {userInfo && userInfo.isSeller ? (
               <Link
                 to="/create-auction"
-                className="bg-white hover:bg-gray-200 hover:text-cyan-600 duration-200 sm:mr-2 text-cyan-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bgColar flex alignICenter hover:bg-gray-200 hover:text-cyan-600 duration-200 sm:mr-2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
-                Create Auction
+                <GrAdd  size={20} className='mr-2'/> Auction
               </Link>
             ) : (
               <></>
@@ -106,9 +117,9 @@ function AuctionPage() {
         ) : error ? (
           <ErrorPage />
         ) : products.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 my-4 gap-10">
             {products.reverse().map((product) => (
-              <div className="border-b border-gray-200 py-2" key={product._id}>
+              <div className="border-b border-gray-200 py-2 widthLg" key={product._id}>
                 {(product.bids.length > 0 &&
                   product.bids[product.bids.length - 1]?.bidder) ===
                 userInfo?.name ? (

@@ -7,7 +7,7 @@ import { getError } from "../../utils";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingDots from "../../components/dotsLoading/dotsLoading";
-
+import './userList.css'
 const reducer = (state, action) => {
   switch (action.type) {
     case "FETCH_REQUEST":
@@ -102,12 +102,12 @@ export default function UserListPage() {
           No Users Found!
         </div>
       ) : (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container w50 mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold mb-8">Users List</h1>
           {loadingDelete && <LoadingDots />}
 
           {/* Primary card */}
-          <div className="border border-gray-300 rounded-md shadow-sm overflow-hidden mb-4">
+          <div className="border w70 border-gray-300 rounded-md shadow-sm overflow-hidden mb-4">
             <div className="grid grid-cols-6 bg-gray-50 border-b border-gray-300 font-medium text-sm overflow-x-auto">
               <div className="py-3 px-4 ml-16">ID</div>
               <div className="py-3 px-4">NAME</div>
@@ -121,7 +121,7 @@ export default function UserListPage() {
           {users.map((user) => (
             // Order card
             <div
-              className="border border-gray-300 rounded-md shadow-sm overflow-hidden mx-4 mb-4 hover:scale-[101%] backface-hidden duration-300"
+              className="border w70 border-gray-300 rounded-md shadow-sm overflow-hidden mb-4 hover:scale-[101%] backface-hidden duration-300"
               key={user._id}
             >
               <div className="grid grid-cols-6 bg-gray-100 text-sm font-medium text-gray-700 overflow-x-auto">
