@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.global__background {
+  background-color: #1a1a1a;
+  padding-top: 100px;
+  background-image: url("../assets/Hexagon.svg");
+  background-repeat: repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: 250px;
+  z-index: -1;
+}

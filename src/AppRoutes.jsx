@@ -39,7 +39,6 @@ const AppRoutes = () => {
           <>
             <Header />
             <CartPage />
-            <Footer />
           </>
         }
       />
@@ -52,7 +51,6 @@ const AppRoutes = () => {
           <>
             <Header />
             <Address />
-            <Footer />
           </>
         }
       />
@@ -62,7 +60,6 @@ const AppRoutes = () => {
           <>
             <Header />
             <PaymentMethod />
-            <Footer />
           </>
         }
       />

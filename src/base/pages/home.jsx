@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <>
-      <div className="home__component home flex flex-col h-screen justify-between">
+      <div className="global__background home flex flex-col h-screen justify-between">
         <Helmet>
           <title>AuctionHUB</title>
         </Helmet>

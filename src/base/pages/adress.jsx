@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CheckoutSteps from "../components/checkoutSteps";
 import { Store } from "../context/Store";
 import "../styles/adress.css";
+import Footer from "./footer";
 
 export default function Address() {
   const navigate = useNavigate();
@@ -50,12 +51,12 @@ export default function Address() {
   };
 
   return (
-    <div className="area h-screen">
+    <div className="global__background h-screen">
       <Helmet>
         <title>Shipping Address-AuctionHUB</title>
       </Helmet>
 
-      <div className="flex justify-center bgIndigo items-center context h-5/6">
+      <div className="flex justify-center  items-center context h-5/6">
         <div className="w50">
           <div className="text-center">
             <h1 className="text-2xl text-white font-bold my-4">
@@ -163,6 +164,9 @@ export default function Address() {
         </div>
       </div>
       <CheckoutSteps step1 step2 />
+      <div className="pt-6">
+        <Footer />
+      </div>
     </div>
   );
 }

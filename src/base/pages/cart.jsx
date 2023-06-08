@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Store } from "../context/Store";
 import "../styles/cart.css";
 import { MdOutlineDelete } from "react-icons/md";
+import Footer from "./footer";
 
 export default function CartPage() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -22,7 +23,7 @@ export default function CartPage() {
   };
   console.log(cartItems);
   return (
-    <div className="shoppingCart">
+    <div className="global__background h-screen flex flex-col justify-between">
       <Helmet>
         <title>Cart-AuctionHUB</title>
       </Helmet>
@@ -116,6 +117,9 @@ export default function CartPage() {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

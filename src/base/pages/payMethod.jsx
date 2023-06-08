@@ -4,12 +4,16 @@ import { Helmet } from "react-helmet-async";
 import "../styles/payMethod.css";
 import { Store } from "../context/Store";
 import { useNavigate } from "react-router";
+import Footer from "./footer";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 function PaymentCard({ id, value, logo, label, selected, onClick }) {
   return (
     <div
-      className={`border-2 border-gray-300 rounded-lg p-8 cursor-pointer transition-colors duration-300 flex items-center justify-center flex-col lg:w-96 lg:h-64 ${
-        selected ? "border-cyan-500 shadow-md" : "bg-gray-100 hover:bg-white"
+      className={`border-2  border-gray-300 text-white rounded-lg p-8 cursor-pointer transition-colors duration-300 flex items-center justify-center flex-col lg:w-96 lg:h-64 ${
+        selected
+          ? "border-orange-600 shadow-md bg-orange-500 first-letter:"
+          : " "
       }`}
       onClick={() => onClick(id)}
     >
@@ -68,40 +72,48 @@ export default function PaymentPage() {
   };
 
   return (
-    <div className="area h-screen">
+    <div className="global__background h-screen">
       <Helmet>
         <title>Payment-AuctionHUB</title>
       </Helmet>
 
-      <div className="max-w-3xl h-5/6 mx-auto px-4 py-8 flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold mb-8">Select Payment Method</h1>
-        <div className="flex space-x-16 justify-center items-center">
-          <PaymentCard
-            id="PayPal"
-            value="PayPal"
-            logo="https://www.freepnglogos.com/uploads/paypal-logo-png-1.png"
-            label="PayPal"
-            selected={paymentMethodName === "PayPal"}
-            onClick={handleCardClick}
-          />
-          <PaymentCard
-            id="Stripe"
-            value="Stripe"
-            logo="https://stripe.com/img/v3/home/social.png"
-            label="Stripe"
-            selected={paymentMethodName === "Stripe"}
-            onClick={handleCardClick}
-          />
+      <div className=" h-5/6 mx-auto px-4 py-8 flex flex-col items-center justify-center">
+        <h1 className="text-3xl text-white font-bold mb-8">
+          Select Payment Method
+        </h1>
+        <div className="flex flex-row  justify-evenly w-full gap-10 items-center">
+          <div className="flex flex-col  gap-5 justify-center items-center">
+            <PaymentCard
+              id="PayPal"
+              value="PayPal"
+              logo="https://www.freepnglogos.com/uploads/paypal-logo-png-1.png"
+              label="PayPal"
+              selected={paymentMethodName === "PayPal"}
+              onClick={handleCardClick}
+            />
+            <PaymentCard
+              id="Stripe"
+              value="Stripe"
+              logo="https://stripe.com/img/v3/home/social.png"
+              label="Stripe"
+              selected={paymentMethodName === "Stripe"}
+              onClick={handleCardClick}
+            />
+          </div>
+          <button
+            className="border-orange-600 border-2 h-auto flex flex-row items-center gap-1  hover:bg-orange-600 text-white font-bold   py-2 px-8 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+            onClick={submitHandler}
+          >
+            Continue
+            <AiOutlineArrowRight />
+          </button>
         </div>
-        <button
-          className="borderCoral text-white font-bold mt-16 w-[50%] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-          onClick={submitHandler}
-        >
-          Continue
-        </button>
       </div>
       <CheckoutSteps step1 step2 step3 />
+      <div className="pt-6">
+        <Footer />
+      </div>
     </div>
   );
 }
