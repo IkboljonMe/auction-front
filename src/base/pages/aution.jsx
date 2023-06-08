@@ -9,6 +9,7 @@ import axios from "axios";
 import { GrAdd } from "react-icons/gr";
 import { Tilt } from "react-tilt";
 import "../styles/auction.css";
+import Footer from "./footer";
 const initialState = {
   products: [],
   loading: true,
@@ -74,38 +75,7 @@ function AuctionPage() {
   };
 
   return (
-    <div className="bgIndigo height100vh">
-      {/* <header
-        className={
-          color ? "py-2 shadow-sm fixedTop" : "py-4 my-1 bgWhite shadow-sm"
-        }
-      >
-        <div className="container mx-auto flex items-center">
-          <div
-            className={`flex-grow justify-center ${
-              userInfo && userInfo.isSeller ? "ml-36" : " ml-auto"
-            } `}
-          >
-            <h1
-              className={
-                color
-                  ? "text-3xl font-bold mx-auto textDark"
-                  : "text-3xl font-bold text-white mx-auto"
-              }
-            >
-              <i
-                className={
-                  color
-                    ? "fas fa-hourglass-half text-2xl textDark mr-2"
-                    : "fas fa-hourglass-half text-2xl mr-2"
-                }
-              ></i>
-              Live Auction
-            </h1>
-          </div>
-     
-        </div>
-      </header> */}
+    <div className="auction__background h-screen">
       <div className="flex justify-center pt-4">
         {userInfo && userInfo.isSeller ? (
           <Link
@@ -134,10 +104,7 @@ function AuctionPage() {
                   speed: 1500,
                 }}
               >
-                <div
-                  className="border-b border-gray-200 py-2 widthLg"
-                  key={product._id}
-                >
+                <div className="bg-inherit  py-2 " key={product._id}>
                   {(product.bids.length > 0 &&
                     product.bids[product.bids.length - 1]?.bidder) ===
                   userInfo?.name ? (
@@ -180,6 +147,7 @@ function AuctionPage() {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   );
 }

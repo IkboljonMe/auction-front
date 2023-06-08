@@ -53,34 +53,36 @@ function AuctionItem(props) {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-md overflow-hidden" key={id}>
+    <div
+      className="flex flex-col px-10 py-20 bg-transparent border-2 mx-auto w-2/3 border-white hover:border-4 hover:border-orange-600 shadow-md rounded-md overflow-hidden"
+      key={id}
+    >
       <Helmet>
         <title>AuctionHUB</title>
       </Helmet>
-      <div className="relative">
+      <div className="">
         <img
+          class="h-auto max-w-30 max-h-20 object-contain"
           src={imageUrl}
-          alt="ItemImage"
-          className=" pt-2 w-full h-48 object-contain hover:scale-105 duration-500"
+          alt="imae"
         />
-
-        {userInfo && userInfo.isAdmin && (
-          <button className="absolute top-0 right-0" onClick={handleDelete}>
-            <i className="fas fa-trash-alt text-red-600 bg-transparent hover:text-red-900 hover:bg-gray-200 duration-200 px-2 py-2"></i>
-          </button>
-        )}
+        <h2 className="font-bold text-white justify-center flex">{title}</h2>
       </div>
-      <div className="px-4 py-2 flex flex-col gap-5 ">
-        <h2 className="text-lg   font-bold text-gray-800">{title}</h2>
+
+      {userInfo && userInfo.isAdmin && (
+        <button className="bg-inherit " onClick={handleDelete}>
+          <i className="fas fa-trash-alt text-red-600 bg-transparent hover:text-red-900 hover:bg-gray-200 duration-200 px-2 py-2"></i>
+        </button>
+      )}
+
+      <div className="px-4 py-2 flex flex-col ">
         <div className="flex justify-between">
-          <p className="text-gray-600 fWeight">Current bid:</p>
-          <p className="text-gray-600 fWeight">
-            ${currentBid.toLocaleString("en-IN")}
-          </p>
+          <p className="text-white ">Current bid:</p>
+          <p className="text-white">${currentBid.toLocaleString("en-IN")}</p>
         </div>
         <div className="flex justify-between">
-          <p className="text-gray-600">Time left:</p>
-          <span className="font-bold">{timeLeft}</span>
+          <p className="text-white">Time left:</p>
+          <span className="font-bold text-white">{timeLeft}</span>
         </div>
 
         {auctionEnded ? (
@@ -89,7 +91,7 @@ function AuctionItem(props) {
               <Link to={`/auctions/${id}`}>
                 <button
                   onClick={() => addToCartHandler(props)}
-                  className="w-full py-2 px-4 bgColar hover:scale-105 text-white duration-200 rounded-md mt-4"
+                  className="w-full py-2 px-4 bg-green-700 hover:scale-105 text-white duration-200 rounded-md mt-4"
                 >
                   You Win🎉
                 </button>
@@ -105,7 +107,7 @@ function AuctionItem(props) {
           </>
         ) : (
           <Link to={userInfo ? `/auctions/${id}` : "/signin"}>
-            <button className="w-full py-2 px-4 bg-gray-300 text-gray-600 duration-200 rounded-md mt-4 hover:bg-gray-400">
+            <button className="w-full py-2 px-4  bg-orange-600 text-gray-600 duration-200 rounded-md mt-4 hover:bg-gray-400">
               Bid with other now 💵
             </button>
           </Link>

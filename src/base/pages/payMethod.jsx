@@ -84,11 +84,11 @@ export default function PaymentPage() {
         <div className="flex flex-row  justify-evenly w-full gap-10 items-center">
           <div className="flex flex-col  gap-5 justify-center items-center">
             <PaymentCard
-              id="PayPal"
-              value="PayPal"
-              logo="https://www.freepnglogos.com/uploads/paypal-logo-png-1.png"
-              label="PayPal"
-              selected={paymentMethodName === "PayPal"}
+              id="Pekao"
+              value="Pekao"
+              logo="https://companieslogo.com/img/orig/PEO.WA-cc8df6b2.png?t=1644424056"
+              label="Pekao"
+              selected={paymentMethodName === "Pekao"}
               onClick={handleCardClick}
             />
             <PaymentCard
