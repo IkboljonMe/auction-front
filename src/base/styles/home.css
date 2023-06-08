@@ -1,7 +1,15 @@
-.home__component{
-  background-color: indigo;
-  height: max-content;
+.home__component {
+  background-color: #000;
   padding-top: 100px;
+  background-image: url("../assets/Hexagon.svg");
+  background-repeat: repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: 250px;
+  z-index: -1;
 }
 .imagContainer {
   display: flex;
@@ -16,12 +24,11 @@
   /* flex-direction: column; */
   gap: 70px;
 }
-.titleButton{
+.titleButton {
   display: flex;
   flex-direction: column;
-
 }
-.titleButton h1{
+.titleButton h1 {
   margin-bottom: 170px;
 }
 
@@ -85,7 +92,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
-.hero-text{
+.hero-text {
   margin-bottom: 120px;
 }
-

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="home__component">
+    <div className="home__component home">
       <div className="text-center pb-4 pt-8">
         <Helmet>
           <title>AuctionHUB</title>
