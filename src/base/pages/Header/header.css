@@ -1,0 +1,19 @@
+.bgLight{
+}
+.fs-1{
+    font-size: 17px;
+}
+.bgBisque{
+    background-color:khaki;
+}
+.fWeight{
+    font-weight: 700;
+    color: #fff;
+}
+.wMd{
+    width: 400px;
+}
+.borderDark{
+    border: 1px solid black;
+    border-radius: 12px;
+}

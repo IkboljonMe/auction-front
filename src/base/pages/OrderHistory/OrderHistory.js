@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import { Helmet } from "react-helmet-async";
-import Loading from "../../components/Loading/Loading";
+import Loading from "../../components/loading/loading";
 import { Store } from "../../Store";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";

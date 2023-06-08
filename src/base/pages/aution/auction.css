@@ -1,0 +1,40 @@
+.bgIndigo{
+    background-color: indigo;
+}
+.textColar{
+    color: rgb(237, 123, 81);
+}
+.bgColar{
+    
+    background-color: rgb(222, 86, 37);
+}
+.mr-2{
+margin-right: 12px;
+}
+.fixedTop{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    padding: 8px;
+    background-color: #fff;
+}
+.alignICenter{
+    align-items: center;
+}
+.bgWhite{
+    background-color: rgb(151, 34, 235);
+}
+.textDark{
+    color: #000;
+}
+.heightMd{
+    height: 300px;
+}
+.widthLg{
+    width: 80%;
+    margin: auto;
+}
+.height100vh{
+    height: auto;
+}

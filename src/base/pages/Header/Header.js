@@ -3,6 +3,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Store } from "../../Store";
+import './header.css'
+import {FaShoppingCart,FaUser, FaUserAlt} from 'react-icons/fa'
 
 export default function Navbar() {
   const [text, setText] = useState("");
@@ -80,21 +82,21 @@ export default function Navbar() {
   return (
     <>
       <ToastContainer position="bottom-center" limit={1} />
-      <header className="text-gray-600 body-font shadow-lg">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <header className="shadow-lg p_fixed bgBisque">
+        <div className="container mx-auto flex flex-wrap p-5 flex-col  md:flex-row items-center">
           <Link
             to="/"
             className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 mb-0 md:mb-0"
           >
             <span className="ml-3 text-3xl font-bold">
-              <span className="text-cyan-500">AEH</span>Bidding
+              <span className="text-base-500">AEH</span>Bidding
             </span>
           </Link>
 
           <nav className="flex lg:w-2/5 flex-wrap lg:justify-end items-center text-base md:ml-auto">
             <Link to="/auction" className="relative inline-flex items-center">
               <span className="relative inline-flex items-center rounded px-2.5 py-1.5 font-medium">
-                <span className="ml-1.5 text-base text-gray-600 hover:text-gray-900">
+                <span className="text-gray-600 text-lg hover:text-gray-900">
                   Auction
                 </span>
               </span>
@@ -110,7 +112,7 @@ export default function Navbar() {
                   </span>
                 )}
                 <span className="ml-1.5 text-base text-gray-600 hover:text-gray-900">
-                  Cart
+                  <FaShoppingCart size={23}/>
                 </span>
               </span>
             </Link>
@@ -150,33 +152,21 @@ export default function Navbar() {
                 {isOpenAdmin && (
                   <div
                     id="dropdownAvatar"
-                    className="absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-lg right-0 mt-2 w-48 sm:left-auto"
+                    className="absolute bgBisque borderDark z-10 divide-y rounded-lg shadow-lg right-0 mt-2 sm:left-auto"
                   >
-                    <div className="px-4 py-3 text-sm text-gray-900 mt-1">
-                      <span className="bg-red-500 text-white px-2">
+                    <div className="px-4 wMd py-3 text-lg text-black mt-1">
+                      <span className="fs-1 text-black fWeight">
                         {userInfo.name}
                       </span>
-                      <div className="font-medium truncate">
+                      <div className="font-medium ">
                         {userInfo.email}
                       </div>
                     </div>
-                    <ul
-                      className="py-2 text-sm text-gray-700"
-                      aria-labelledby="dropdownUserAvatarButton"
-                    >
-                      <li>
-                        <Link
-                          to="/admin/dashboard"
-                          className="block px-4 py-2 hover:bg-gray-100"
-                        >
-                          Dashboard
-                        </Link>
-                      </li>
-                    </ul>
+                     
                     <div className="py-2">
                       <Link
                         to="/admin/users"
-                        className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                        className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 hover:text-black"
                       >
                         Manage Users
                       </Link>
@@ -194,44 +184,21 @@ export default function Navbar() {
                   className="flex items-center mr-2 hover:text-gray-900 focus:outline-none cursor-pointer"
                   onClick={toggleDropdown}
                 >
-                  <img
-                    className="w-8 h-8 rounded-full hover:scale-110 duration-200"
-                    src="https://i.pravatar.cc/150?img=3"
-                    alt="profilepic"
-                  />
+                  <FaUserAlt className="w-8 h-6 rounded-full hover:scale-110 duration-200"/>
+                  
                 </button>
                 {isOpen && (
                   <div
                     id="dropdownAvatar"
-                    className="absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-lg right-0 mt-2 w-48 sm:left-auto sm:right-0"
+                    className="absolute borderDark z-10 bgBisque divide-y rounded-lg shadow-lg right-0 mt-2 sm:left-auto"
                   >
-                    <div className="px-4 py-3 text-sm text-gray-900">
+                    <div className="px-4 py-3 fs-1 text-sm text-black wMd">
                       <div>{userInfo.name}</div>
                       <div className="font-medium truncate">
                         {userInfo.email}
                       </div>
                     </div>
-                    <ul
-                      className="py-2 text-sm text-gray-700"
-                      aria-labelledby="dropdownUserAvatarButton"
-                    >
-                      <li>
-                        <Link
-                          to="/profile"
-                          className="block px-4 py-2 hover:bg-gray-100"
-                        >
-                          Profile
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/orderhistory"
-                          className="block px-4 py-2 hover:bg-gray-100"
-                        >
-                          Your Orders
-                        </Link>
-                      </li>
-                    </ul>
+                    
                     <div className="py-2">
                       <Link
                         to="#signout"

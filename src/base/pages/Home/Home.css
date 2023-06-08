@@ -1,18 +1,34 @@
+.home__component{
+  background-color: indigo;
+  height: max-content;
+  padding-top: 100px;
+}
 .imagContainer {
   display: flex;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 300px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
   height: 80vh;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 70px;
+}
+.titleButton{
+  display: flex;
+  flex-direction: column;
+
+}
+.titleButton h1{
+  margin-bottom: 170px;
 }
 
 .imagContainer > img {
-  width: 400px;
+  width: 470px;
+  border-radius: 12px;
+  height: 300px;
   border: 2px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -69,3 +85,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 }
+.hero-text{
+  margin-bottom: 120px;
+}
+
