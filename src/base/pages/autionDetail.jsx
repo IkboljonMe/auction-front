@@ -7,7 +7,6 @@ import ErrorPage from "../components/errorPage";
 import Loading from "../components/loading";
 import { Store } from "../context/Store";
 import "../styles/auctionItems.css";
-import { Tilt } from "react-tilt";
 
 const initialState = {
   products: [],
@@ -121,20 +120,11 @@ const AuctionDetail = () => {
                 <TimeLeft endDate={auction.endDate} />
               </div>
               <div className="w-full p-4">
-                <Tilt
-                  options={{
-                    max: 6,
-                    transition: 0.5,
-                    scale: 1,
-                    speed: 300,
-                  }}
-                >
-                  <img
-                    src={auction.imageUrl}
-                    alt={auction.title}
-                    className="rounded-lg shadow-lg imgWidth"
-                  />
-                </Tilt>
+                <img
+                  src={auction.imageUrl}
+                  alt={auction.title}
+                  className="rounded-lg shadow-lg imgWidth"
+                />
               </div>
             </div>
 

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { GrAdd } from "react-icons/gr";
+import { Tilt } from "react-tilt";
 import "../styles/auction.css";
 const initialState = {
   products: [],
@@ -134,36 +135,50 @@ function AuctionPage() {
         ) : products.length > 0 ? (
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 my-4 gap-10">
             {products.reverse().map((product) => (
-              <div
-                className="border-b border-gray-200 py-2 widthLg"
-                key={product._id}
+              <Tilt
+                options={{
+                  max: 20,
+                  transition: 1,
+                  scale: 1.05,
+                  speed: 1500,
+                }}
               >
-                {(product.bids.length > 0 &&
-                  product.bids[product.bids.length - 1]?.bidder) ===
-                userInfo?.name ? (
-                  <AuctionItem
-                    key={product._id}
-                    id={product._id}
-                    title={product.title}
-                    imageUrl={product.imageUrl}
-                    endDate={product.endDate}
-                    currentBid={product.currentBid}
-                    highestBidder={userInfo.name}
-                    handleDeleteAuction={() => handleDeleteAuction(product._id)}
-                  />
-                ) : (
-                  <AuctionItem
-                    key={product._id}
-                    id={product._id}
-                    title={product.title}
-                    imageUrl={product.imageUrl}
-                    endDate={product.endDate}
-                    currentBid={product.currentBid}
-                    highestBidder="NoBids"
-                    handleDeleteAuction={() => handleDeleteAuction(product._id)}
-                  />
-                )}
-              </div>
+                {" "}
+                <div
+                  className="border-b border-gray-200 py-2 widthLg"
+                  key={product._id}
+                >
+                  {(product.bids.length > 0 &&
+                    product.bids[product.bids.length - 1]?.bidder) ===
+                  userInfo?.name ? (
+                    <AuctionItem
+                      key={product._id}
+                      id={product._id}
+                      title={product.title}
+                      imageUrl={product.imageUrl}
+                      endDate={product.endDate}
+                      currentBid={product.currentBid}
+                      highestBidder={userInfo.name}
+                      handleDeleteAuction={() =>
+                        handleDeleteAuction(product._id)
+                      }
+                    />
+                  ) : (
+                    <AuctionItem
+                      key={product._id}
+                      id={product._id}
+                      title={product.title}
+                      imageUrl={product.imageUrl}
+                      endDate={product.endDate}
+                      currentBid={product.currentBid}
+                      highestBidder="NoBids"
+                      handleDeleteAuction={() =>
+                        handleDeleteAuction(product._id)
+                      }
+                    />
+                  )}
+                </div>
+              </Tilt>
             ))}
           </div>
         ) : (
