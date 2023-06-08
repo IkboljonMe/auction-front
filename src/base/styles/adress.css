@@ -1,7 +1,12 @@
 ul {
   background-color: white;
 }
-
+.bgIndigo{
+    background-color: indigo;
+}
+.bgCoral{
+  background-color: rgb(198, 84, 43);
+}
 /* .area {
   background-image: url("../assets/Hexagon.svg");
   background-repeat: repeat;
@@ -122,4 +127,17 @@ ul {
     opacity: 0;
     border-radius: 50%;
   }
+}
+.w50{
+  width: 50%;
+}
+.absolute{
+  padding: 0 5px;
+  font-size: 14px;
+  background-color: #fff;
+  top: -10px;
+  left: 15px;
+}
+input:focus{
+  border: 2px solid coral;
 }

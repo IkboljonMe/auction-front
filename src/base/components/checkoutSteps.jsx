@@ -15,7 +15,7 @@ export default function CheckoutSteps(props) {
         >
           <span className="sr-only">Step 1</span>1
         </button>
-        <p className="mt-1 font-medium text-gray-900 whitespace-nowrap">
+        <p className="mt-1 font-medium text-white whitespace-nowrap">
           Registration AuctionHUB
         </p>
       </div>
@@ -31,13 +31,13 @@ export default function CheckoutSteps(props) {
           className={`h-8 w-8 rounded-full ${
             props.step2
               ? " border-orange-600 bg-orange-600 text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
-              : "border border-gray-300 bg-white text-gray-500 opacity-50 cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+              : "border border-gray-300 bg-white text-white opacity-50 cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
           }`}
           disabled={!props.step2}
         >
           <span className="sr-only">Step 2</span>2
         </button>
-        <p className="mt-1 font-medium text-gray-900">Shipping</p>
+        <p className="mt-1 font-medium text-white">Shipping</p>
       </div>
       {props.step2 && props.step3 ? (
         <div className="w-full h-[3px] bg-orange-600"></div>
@@ -57,7 +57,7 @@ export default function CheckoutSteps(props) {
         >
           <span className="sr-only">Step 3</span>3
         </button>
-        <p className="mt-1 font-medium text-gray-900">Payment</p>
+        <p className="mt-1 font-medium text-white">Payment</p>
       </div>
       {props.step3 && props.step4 ? (
         <div className="w-full h-[3px] bg-orange-600"></div>
@@ -77,7 +77,7 @@ export default function CheckoutSteps(props) {
         >
           <span className="sr-only">Step 4</span>4
         </button>
-        <p className="mt-1 font-medium text-gray-900 whitespace-nowrap">
+        <p className="mt-1 font-medium text-white whitespace-nowrap">
           Place Order
         </p>
       </div>

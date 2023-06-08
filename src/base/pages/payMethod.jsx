@@ -94,7 +94,7 @@ export default function PaymentPage() {
           />
         </div>
         <button
-          className="bg-cyan-500 hover:bg-cyan-700 text-white font-bold mt-16 w-[50%] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="borderCoral text-white font-bold mt-16 w-[50%] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
           onClick={submitHandler}
         >

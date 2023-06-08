@@ -46,7 +46,7 @@ function Home() {
           onReachEnd={handleSwiperReachEnd}
         >
           <SwiperSlide className="flex justify-center">
-            <img src={auction1} alt="1" />
+            <img src={auction1} alt="1"   />
           </SwiperSlide>
           <SwiperSlide className="flex justify-center">
             <img src={auction2} alt="2" />

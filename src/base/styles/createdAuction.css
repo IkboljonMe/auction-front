@@ -1,0 +1,22 @@
+.createdAuction{
+    background-color: rgb(118, 28, 183);
+}
+.absolute{
+    padding: 0 5px;
+    font-size: 14px;
+    background-color: #fff;
+    top: -10px;
+    left: 15px;
+  }
+  input:focus{
+    border: 2px solid coral;
+  }
+  input,textarea{
+    border: 1px solid #444;
+  }
+  label{
+    font-weight: bold;
+  }
+  .borderCoral{
+    border: 2px solid rgb(216, 86, 39);
+  }

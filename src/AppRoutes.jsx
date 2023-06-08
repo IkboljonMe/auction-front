@@ -18,6 +18,7 @@ import UserEditPage from "./base/pages/editUser";
 import AuctionPage from "./base/pages/aution";
 import CreateAuction from "./base/pages/createdAution";
 import AuctionDetail from "./base/pages/autionDetail";
+import Footer from "./base/pages/footer";
 
 const AppRoutes = () => {
   return (
@@ -38,6 +39,8 @@ const AppRoutes = () => {
           <>
             <Header />
             <CartPage />
+            <Footer/>
+
           </>
         }
       />
@@ -50,6 +53,8 @@ const AppRoutes = () => {
           <>
             <Header />
             <Address />
+            <Footer/>
+
           </>
         }
       />
@@ -59,6 +64,8 @@ const AppRoutes = () => {
           <>
             <Header />
             <PaymentMethod />
+            <Footer/>
+             
           </>
         }
       />
@@ -69,6 +76,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <PlaceOrder />
+            <Footer/>
           </>
         }
       />
@@ -81,6 +89,7 @@ const AppRoutes = () => {
             <ProtectedRoute>
               <OrderPage />
             </ProtectedRoute>
+            <Footer/>
           </>
         }
       />
@@ -93,6 +102,7 @@ const AppRoutes = () => {
             <ProtectedRoute>
               <OrderHistory />
             </ProtectedRoute>
+            <Footer/>
           </>
         }
       />
@@ -105,6 +115,7 @@ const AppRoutes = () => {
             <ProtectedRoute>
               <ProfilePage />
             </ProtectedRoute>
+            <Footer/>
           </>
         }
       />
@@ -119,6 +130,7 @@ const AppRoutes = () => {
             <AdminRoute>
               <UserListPage />
             </AdminRoute>
+            <Footer/>
           </>
         }
       />
@@ -131,6 +143,7 @@ const AppRoutes = () => {
             <AdminRoute>
               <UserEditPage />
             </AdminRoute>
+            <Footer/>
           </>
         }
       />
@@ -141,6 +154,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <AuctionPage />
+            <Footer/>
           </>
         }
       />
@@ -151,6 +165,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <CreateAuction />
+            <Footer/>
           </>
         }
       />
@@ -161,6 +176,7 @@ const AppRoutes = () => {
           <>
             <Header />
             <AuctionDetail />
+            <Footer/>
           </>
         }
       />

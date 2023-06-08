@@ -55,18 +55,18 @@ export default function Address() {
         <title>Shipping Address-AuctionHUB</title>
       </Helmet>
 
-      <div className="flex justify-center bg-transparent items-center context h-5/6">
-        <div className="w-full max-w-2xl">
+      <div className="flex justify-center bgIndigo items-center context h-5/6">
+        <div className="w50">
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-3">Shipping Address</h1>
+            <h1 className="text-2xl text-white font-bold my-4">Shipping Address</h1>
           </div>
           <form
-            className="bg-transparent shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            className="bg-white shadow-md rounded px-8 pt-6 pb-2 mb-4"
             onSubmit={submitHandler}
           >
-            <div className="mb-4">
+            <div className="mb-6 relative">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block text-gray-700 absolute  font-bold mb-2"
                 htmlFor="fullName"
               >
                 Full Name
@@ -81,9 +81,9 @@ export default function Address() {
                 placeholder="Enter your full name"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-6 relative">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block absolute text-gray-700 font-bold mb-2"
                 htmlFor="address"
               >
                 Address
@@ -98,9 +98,9 @@ export default function Address() {
                 placeholder="Enter your address"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-6 relative">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block absolute text-gray-700 font-bold mb-2"
                 htmlFor="city"
               >
                 City
@@ -115,9 +115,9 @@ export default function Address() {
                 placeholder="Enter your city"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-6 relative">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block absolute text-gray-700 font-bold mb-2"
                 htmlFor="pinCode"
               >
                 Pin Code
@@ -132,9 +132,9 @@ export default function Address() {
                 placeholder="Enter your pin code"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 relative">
               <label
-                className="block text-gray-700 font-bold mb-2"
+                className="block absolute text-gray-700 font-bold mb-2"
                 htmlFor="country"
               >
                 Country
@@ -151,7 +151,7 @@ export default function Address() {
             </div>
             <div className="flex items-center justify-center mt-6">
               <button
-                className="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bgCoral text-black font-bold py-2 px-4 rounded"
                 type="submit"
               >
                 Continue

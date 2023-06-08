@@ -89,14 +89,14 @@ export default function PlaceOrder() {
       <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row h-5/6">
         {/* Preview Order */}
         <div className="flex flex-col w-full">
-          <h1 className="text-2xl font-semibold items-center justify-center flex text-blue-700 mb-4">
+          <h1 className="text-2xl font-semibold text-white items-center justify-center flex text-blue-700 mb-4">
             Last Preview Order
           </h1>
 
-          <div className="flex-none w-full lg:w-auto">
+          <div className="grid grid-cols-3">
             {/* Shipping Card */}
-            <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex justify-center">
+            <div className="bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
+              <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
                 Shipping
               </h2>
               <p className="text-gray-700 mb-2 flex justify-between">
@@ -117,8 +117,8 @@ export default function PlaceOrder() {
             </div>
 
             {/* Payment Card */}
-            <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex justify-center">
+            <div className="bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
+              <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
                 Payment
               </h2>
               <p className="text-gray-700 mb-2 flex justify-between">
@@ -136,9 +136,10 @@ export default function PlaceOrder() {
             </div>
 
             {/* Order Summary Card */}
-            <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex justify-center">
+            <div className="bg-white rounded-lg shadow-md p-4 mb-4 mx-4">
+              <h2 className="text-lg borderColor font-semibold text-gray-800 mb-4 flex justify-center">
                 Order Summary
+              
               </h2>
               <div className="flex flex-col space-y-4">
                 <div className="flex justify-between">
@@ -170,7 +171,7 @@ export default function PlaceOrder() {
                   </p>
                 </div>
                 <button
-                  className="bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600 duration-200 mt-4"
+                  className="borderCoral text-black px-4 py-2 rounded mt-4"
                   onClick={placeOrderHandler}
                   disabled={cart.cartItems.length === 0}
                 >
@@ -182,7 +183,7 @@ export default function PlaceOrder() {
           </div>
         </div>
       </div>
-      <CheckoutSteps step1 step2 step3 step4 />
+      <CheckoutSteps step1 step2 step3 step4  />
     </div>
   );
 }
