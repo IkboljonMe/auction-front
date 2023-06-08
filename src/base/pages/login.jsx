@@ -73,7 +73,7 @@ function Login() {
           <input
             type="email"
             placeholder="Email"
-            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            className="inputFocus px-12 border-2 rounded placeholder:text-orange-500 border-orange-600 py-8  font-display outline-none  text-orange-500 transition-all duration-500"
             required
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -82,7 +82,7 @@ function Login() {
           <input
             type="password"
             placeholder="Password"
-            className="inputFocus pl-8 w-64 border-b-2 font-display outline-none  transition-all duration-500"
+            className="inputFocus px-12 border-2 rounded placeholder:text-orange-500 border-orange-600 py-8  font-display outline-none  text-orange-500 transition-all duration-500"
             required
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -92,7 +92,8 @@ function Login() {
             to={`/signup?redirect=${redirect}`}
             className="self-start py-4 mt-4 mr-4 text-gray-600  font-semibold opacity-75 hover:opacity-100 transition-all duration-500"
           >
-            Do you have an account? Register here
+            Do you have an account?{" "}
+            <span className="text-orange-500">Register here</span>
           </Link>
         </div>
         <button type="submit" className="bgCoral">
