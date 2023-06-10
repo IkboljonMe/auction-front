@@ -42,9 +42,9 @@ export default function CartPage() {
               </Link>
             </div>
           ) : (
-            <div className="bg-white border-b border-gray-200 sm:rounded-lg hover:transform hover:scale-105 backface-hidden shadow-lg duration-500">
+            <div className="bg-transparent  border-2 border-white sm:rounded-lg hover:transform hover:scale-105 backface-hidden shadow-lg duration-500">
               <div className="overflow-x-auto max-w-full">
-                <div className="flex text-2xl  w-full justify-center pb-5 pt-2">
+                <div className="flex text-2xl mt-2  text-white w-full justify-center pb-5 pt-2">
                   All products
                 </div>
                 <table className="min-w-full divide-y divide-gray-200 ">
@@ -84,8 +84,8 @@ export default function CartPage() {
           )}
         </div>
         <div className="">
-          <div className="bg-white shadow-lg sm:rounded-lg md:-mt-3">
-            <div className="px-4 py-5 sm:p-6">
+          <div className=" shadow-lg border-2 border-white rounded sm:rounded-lg md:-mt-3">
+            <div className=" bg-white px-4 py-5 sm:p-6">
               <h2 className="mb-4 text-lg font-medium items-center flex justify-center text-gray-900">
                 Check order summary
               </h2>
@@ -107,8 +107,10 @@ export default function CartPage() {
                     .toLocaleString("en-IN")}
                 </span>
               </div>
+            </div>
+            <div className="w-full flex bg-transparent z-10 ">
               <button
-                className={`w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded ${
+                className={`lg:w-1/3 md:w-1/2 sm:w-3/4 my-5 hover:bg-transparent  mx-auto bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded ${
                   cartItems.length === 0 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={cartItems.length === 0}

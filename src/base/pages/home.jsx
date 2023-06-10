@@ -40,7 +40,7 @@ function Home() {
             spaceBetween={50}
             slidesPerView={1}
             autoplay={{
-              delay: 1000,
+              delay: 3000,
               reverseDirection: true,
             }}
             loop
@@ -63,10 +63,12 @@ function Home() {
             </SwiperSlide>
           </Swiper>
         </div>
-        <div className="flex justify-center ">
+        <div className="flex justify-center my-5">
           <Link to="/auction">
-            <button type="submit" className="bgCoral">
-              <span className="text-white">Join Auction</span>
+            <button type="submit" className="">
+              <span className="text-blue-500 px-20  hover:text-white hover:border-orange-600 hover:bg-orange-500  border-2  border-blue-500 font-bold py-4  rounded focus:outline-none focus:shadow-outline">
+                Join Auction
+              </span>
             </button>
           </Link>
         </div>
