@@ -1,7 +1,8 @@
 import "./base/styles/App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
-import AppRoutes from "./AppRoutes";
+
+import AppRoutes from "./base/routes/AppRoutes";
 
 // Set the base URL for all axios requests
 axios.defaults.baseURL =

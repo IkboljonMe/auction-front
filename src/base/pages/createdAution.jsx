@@ -109,7 +109,7 @@ const CreateAuction = () => {
   };
 
   return (
-    <div className="auction__background h-screen flex flex-col justify-between">
+    <div className="auction__background h-screen w-full flex flex-col justify-between">
       <Helmet>
         <title>Create Auction</title>
       </Helmet>
@@ -117,14 +117,14 @@ const CreateAuction = () => {
       {error ? (
         <ErrorPage />
       ) : (
-        <div className="mx-auto max-w-7xl mt-0 bg-transparent">
+        <div className=" container mx-auto max-w-7xl mt-0 bg-transparent">
           <h2 className="text-2xl text-blue-500 font-bold mb-4 text-center">
             Create New Auction
           </h2>
           <div className=" flex flex-wrap -mx-4">
-            <div className="w-full md:w-full h-100 px-4">
+            <div className="w-full  h-100 px-4">
               <div className=" shadow-lg p-4">
-                <h3 className="text-lg flex justify-center text-blue-600 font-bold mb-2">
+                <h3 className="text-lg  flex justify-center text-blue-600 font-bold mb-2">
                   Auction Details
                 </h3>
                 <div className="mb-4 relative">
