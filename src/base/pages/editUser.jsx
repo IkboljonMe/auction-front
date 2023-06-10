@@ -44,7 +44,6 @@ export default function UserEditPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
-  const [isSeller, setIsSeller] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,7 +55,6 @@ export default function UserEditPage() {
         setName(data.name);
         setEmail(data.email);
         setIsAdmin(data.isAdmin);
-        setIsSeller(data.isSeller);
         dispatch({ type: "FETCH_SUCCESS" });
       } catch (err) {
         dispatch({
@@ -74,7 +72,7 @@ export default function UserEditPage() {
       dispatch({ type: "UPDATE_REQUEST" });
       await axios.put(
         `/api/users/${userId}`,
-        { _id: userId, name, email, isAdmin, isSeller },
+        { _id: userId, name, email, isAdmin },
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         }
@@ -173,26 +171,6 @@ export default function UserEditPage() {
                         </div>
                         <div className="ml-3 text-gray-700 font-medium">
                           IsAdmin
-                        </div>
-                      </label>
-                      <label htmlFor="isSeller" className="flex items-center">
-                        <div className="relative">
-                          <input
-                            id="isSeller"
-                            name="isSeller"
-                            type="checkbox"
-                            className="sr-only"
-                            onChange={(e) => setIsSeller(e.target.checked)}
-                          />
-                          <div className="block bg-gray-300 w-14 h-8 rounded-full cursor-pointer"></div>
-                          <div
-                            className={`dot cursor-pointer absolute left-1 top-1.5 w-5 h-5 rounded-full transition transform ${
-                              isSeller ? "translate-x-6 bgCoral" : "bg-white"
-                            }`}
-                          ></div>
-                        </div>
-                        <div className="ml-3 text-gray-700 font-medium">
-                          IsSeller
                         </div>
                       </label>
                     </div>

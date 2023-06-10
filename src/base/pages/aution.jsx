@@ -77,7 +77,7 @@ function AuctionPage() {
   return (
     <div className="auction__background h-screen">
       <div className="flex justify-center pt-10">
-        {userInfo && userInfo.isSeller ? (
+        {userInfo && userInfo.isAdmin ? (
           <Link
             to="/create-auction"
             className="bgColar flex alignICenter hover:bg-gray-200 hover:text-cyan-600 duration-200 sm:mr-2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
