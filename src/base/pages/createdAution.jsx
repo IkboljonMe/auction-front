@@ -7,7 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { getError } from "../helpers/utils";
 import LoadingDots from "../components/dotsLoading";
 import ErrorPage from "../components/errorPage";
-import '../styles/createdAuction.css'
+import "../styles/createdAuction.css";
+
+import Footer from "./footer";
 const reducer = (state, action) => {
   switch (action.type) {
     case "UPDATE_REQUEST":
@@ -107,123 +109,133 @@ const CreateAuction = () => {
   };
 
   return (
-    <div className="createdAuction">
+    <div className="auction__background h-screen flex flex-col justify-between">
       <Helmet>
-        <title>Create Auction-AuctionHUB</title>
+        <title>Create Auction</title>
       </Helmet>
 
       {error ? (
         <ErrorPage />
       ) : (
-        <div className="mx-auto max-w-7xl mt-0">
-          <h2 className="text-2xl text-white font-bold mb-4 text-center">
+        <div className="mx-auto max-w-7xl mt-0 bg-transparent">
+          <h2 className="text-2xl text-blue-500 font-bold mb-4 text-center">
             Create New Auction
           </h2>
-          <div className="flex flex-wrap -mx-4">
-           
-            <div className="w-full md:w-1/2 h-100 px-4">
-              <div className="bg-white rounded-lg shadow-lg p-4">
-                <h3 className="text-lg font-bold mb-2">Auction Details</h3>
+          <div className=" flex flex-wrap -mx-4">
+            <div className="w-full md:w-full h-100 px-4">
+              <div className=" shadow-lg p-4">
+                <h3 className="text-lg flex justify-center text-blue-600 font-bold mb-2">
+                  Auction Details
+                </h3>
                 <div className="mb-4 relative">
-                  <label
-                    htmlFor="title"
-                    className="block absolute mb-1"
-                  >
-                    Title
-                  </label>
                   <input
                     type="text"
                     id="title"
                     value={title}
+                    placeholder="Enter title"
                     onChange={(e) => setTitle(e.target.value)}
-                    className="w-full rounded-lg px-4 py-2 bg-white focus:outline-none focus:shadow-outline"
+                    className="w-full rounded-lg border-2 border-blue-400 placeholder:text-blue-400 focus:placeholder:text-orange-500 focus:text-orange-500 text-blue-500  px-4 py-2 bg-inherit focus:outline-none focus:shadow-outline"
                   />
                 </div>
                 <div className="mb-4 relative">
-                  <label
-                    htmlFor="description"
-                    className="block absolute mb-1"
-                  >
-                    Description
-                  </label>
                   <textarea
                     id="description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    className="w-full  rounded-lg px-4 py-2  focus:outline-none focus:shadow-outline"
+                    placeholder="Description"
+                    className="w-full rounded-lg border-2 border-blue-400 placeholder:text-blue-400 focus:placeholder:text-orange-500 focus:text-orange-500 text-blue-500  px-4 py-2 bg-inherit focus:outline-none focus:shadow-outline"
                   ></textarea>
                 </div>
                 <div className="mb-4 relative">
-                  <label
-                    htmlFor="startingBid"
-                    className="block absolute mb-1 z-40"
-                    value={'$'} 
-                  >
-                    Starting Bid
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="number"
-                      id="startingBid"
-                      value={startingBid}
-                      onChange={(e) => setStartingBid(e.target.value)}
-                      className="w-full  rounded-lg px-4 py-2  focus:outline-none focus:shadow-outline"
-                    />
-                    <div className="absolute pr-8 flex items-center pointer-events-none">
-                      <span className="">$</span>
-                    </div>
-                  </div>
+                  <input
+                    type="number"
+                    id="startingBid"
+                    value={startingBid}
+                    onChange={(e) => setStartingBid(e.target.value)}
+                    placeholder="Starting bid"
+                    className="w-full rounded-lg border-2 border-blue-400 placeholder:text-blue-400 focus:placeholder:text-orange-500 focus:text-orange-500 text-blue-500  px-4 py-2 bg-inherit focus:outline-none focus:shadow-outline"
+                  />
                 </div>
                 <div className="mb-4 relative">
-                  <label
-                    htmlFor="imageUrl"
-                    className="block absolute mb-1"
-                  >
-                    Image URL
-                  </label>
                   <input
                     type="text"
                     id="imageUrl"
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)}
-                    className="w-full  rounded-lg px-4 py-2  focus:outline-none focus:shadow-outline"
+                    placeholder="Enter img url"
+                    className="w-full rounded-lg border-2 border-blue-400 placeholder:text-blue-400 focus:placeholder:text-orange-500 focus:text-orange-500 text-blue-500  px-4 py-2 bg-inherit focus:outline-none focus:shadow-outline"
                   />
                 </div>
-                <div className="mb-4 relative">
+                <div class="flex items-center justify-center w-full">
                   <label
-                    htmlFor="imageUrl"
-                    className="block absolute mb-1"
+                    for="dropzone-file"
+                    class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-transparent hover:bg-gray-100 dark:border-blue-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
                   >
-                    Upload Image
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg
+                        aria-hidden="true"
+                        class="w-10 h-10 mb-3 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                        ></path>
+                      </svg>
+                      <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                        <span class="font-semibold">Click to upload</span> or
+                        drag and drop
+                      </p>
+                      <p class="text-xs text-gray-500 dark:text-gray-400">
+                        SVG, PNG, JPG or GIF (MAX. 800x400px)
+                      </p>
+                    </div>
+                    <input
+                      id="dropzone-file"
+                      onChange={uploadFileHandler}
+                      type="file"
+                      class="hidden"
+                    />
                   </label>
-                  <input
-                    type="file"
-                    name="imageFile"
-                    id="imageFile"
-                    onChange={uploadFileHandler}
-                    className="w-full  rounded-lg px-4 py-5  focus:outline-none focus:shadow-outline"
-                  />
-                  {loadingUpload && <LoadingDots />}
                 </div>
+                {loadingUpload && <LoadingDots />}
+
                 <div className="mb-4 relative">
-                  <label
-                    htmlFor="endDate"
-                    className="block absolute mb-1"
-                  >
-                    End Date
-                  </label>
                   <input
                     type="datetime-local"
                     id="endDate"
                     value={endDate}
+                    placeholder="End date"
                     onChange={(e) => setEndDate(e.target.value)}
-                    className="w-full  rounded-lg px-4 py-2 focus:outline-none focus:shadow-outline"
+                    className="w-full  rounded-lg mt-4 text-blue-500 focus:text-orange-500 px-4 py-2 focus:outline-none bg-transparent border-2 border-blue-500 focus:shadow-outline"
                   />
                 </div>
+                <div className="rounded-lg shadow-lg p-4">
+                  <h3 className="text-lg text-blue-500 flex justify-center font-bold mb-2">
+                    Image Preview
+                  </h3>
+                  <div className="h-64 bg-transparent border-2 border-blue-500 py-2  rounded flex justify-center items-center">
+                    {imageUrl ? (
+                      <img
+                        src={imageUrl}
+                        alt="Preview"
+                        className="max-h-full object-contain"
+                      />
+                    ) : (
+                      <p className="text-gray-400">No image provided</p>
+                    )}
+                  </div>
+                </div>
+
                 <div className="text-right">
                   <button
                     onClick={handleSubmit}
-                    className="borderCoral font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="text-blue-500 hover:text-white hover:border-orange-600 hover:bg-orange-500 w-full border-2  border-blue-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   >
                     Create Auction
                   </button>
@@ -231,25 +243,12 @@ const CreateAuction = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-1/2 px-4 mb-4 md:mb-0">
-              <div className="rounded-lg shadow-lg p-4">
-                <h3 className="text-lg text-white font-bold mb-2">Image Preview</h3>
-                <div className="h-64 bg-white rounded flex justify-center items-center">
-                  {imageUrl ? (
-                    <img
-                      src={imageUrl}
-                      alt="Preview"
-                      className="max-h-full object-contain"
-                    />
-                  ) : (
-                    <p className="text-gray-400">No image provided</p>
-                  )}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       )}
+      <div className="mt-5">
+        <Footer />
+      </div>
     </div>
   );
 };
