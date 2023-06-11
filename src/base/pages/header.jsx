@@ -101,22 +101,32 @@ export default function Header() {
                 {isOpen && (
                   <div
                     id="dropdownAvatar"
-                    className="absolute borderDark z-10 bgBisque divide-y rounded-lg shadow-lg right-0 mt-2 sm:left-auto"
+                    className="absolute bg-transparent md:bg-blue-500 z-10 border-2 border-transparent hover:border-white  rounded-lg shadow-lg right-0 t-10 mt-10 sm:left-auto"
                   >
-                    <div className="px-4 py-3 fs-1 text-sm text-black wMd">
-                      <div>{userInfo.name}</div>
-                      <div className="font-medium truncate">
-                        {userInfo.email}
+                    <div className="  px-4 py-3 fs-1 text-sm text-black w-auto  md:wMd">
+                      <div className="flex  flex-col md:flex-row justify-between font-bold text-white">
+                        <p>Name:</p>
+                        <p>{userInfo.name}</p>
+                      </div>
+                      <div className="flex flex-col md:flex-row  justify-between font-bold text-white">
+                        <p>Email:</p>
+                        <p>{userInfo.email}</p>
+                      </div>
+                      <div className="flex flex-col md:flex-row justify-between font-bold text-white">
+                        <p>Admin:</p>
+                        <p>{userInfo.isAdmin ? "Yes" : "No"}</p>
                       </div>
                     </div>
 
-                    <div className="py-2">
+                    <div className="md:bg-blue-500 bg-transparent -pt-1">
                       <Link
+                        className="flex justify-center "
                         to="#signout"
-                        className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                         onClick={signoutHandler}
                       >
-                        Log out
+                        <button className="hover:scale-110 border-2 rounded hover:border-red-500  px-6 py-1 border-transparent my-2 text-sm text-red-600 ">
+                          Log out
+                        </button>
                       </Link>
                     </div>
                   </div>
